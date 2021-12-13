@@ -5,7 +5,7 @@
 
 ### Modelo de Classes
 
-![image](https://drive.google.com/file/d/1WIsWMehqyEuZ1Wtc7lPbhXq5tyyF_jc3/view?usp=sharing)
+![image](https://drive.google.com/file/d/1WIsWMehqyEuZ1Wtc7lPbhXq5tyyF_jc3)
 
 ### Tecnologias
 
