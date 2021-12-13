@@ -5,7 +5,7 @@
 
 ### Modelo de Classes
 
-<a href="https://drive.google.com/uc?export=view&id=1WIsWMehqyEuZ1Wtc7lPbhXq5tyyF_jc3"><img src="https://drive.google.com/uc?export=view&id=1WIsWMehqyEuZ1Wtc7lPbhXq5tyyF_jc3" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+<img src="https://drive.google.com/uc?export=view&id=1Clcpiv23Igv3aArPJN1cg5HILXgEAscN" style="width: 650px; max-width: 100%; height: auto" />
 
 ### Tecnologias
 
