@@ -23,15 +23,6 @@ public class AuthorService {
         return (List<AuthorModel>) repository.findAll();
     }
 
-    public ResponseEntity<?> getAuthorByIdTest(Long id) {
-        String existingAuthor = repository.findByIdTest(id);
-
-        if (existingAuthor == null)
-            return new ResponseEntity<>("{\"message\":\"author does not exist\"}", HttpStatus.NOT_FOUND);
-
-        return new ResponseEntity<>(existingAuthor, HttpStatus.OK);
-    }
-
     public ResponseEntity<?> getAuthorById(Long id) {
         AuthorModel existingAuthor = repository
                 .findById(id)
