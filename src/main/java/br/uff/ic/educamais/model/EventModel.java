@@ -12,19 +12,19 @@ public class EventModel extends CollectionModel {
     @Column(name = "start_date", nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date startDade;
+    private Date startDate;
 
     @Column(name = "end_date", nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date endDate;
 
-    public Date getStartDade() {
-        return startDade;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStartDade(Date startDade) {
-        this.startDade = startDade;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public Date getEndDate() {

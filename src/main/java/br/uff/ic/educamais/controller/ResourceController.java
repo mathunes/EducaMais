@@ -27,7 +27,7 @@ public class ResourceController {
 
     @GetMapping("/resource/{id}")
     public ResponseEntity<?> read(@PathVariable("id") Long id) {
-        return service.getResourceById(id);
+        return service.getResource(id);
     }
 
     @PutMapping("/resource")
