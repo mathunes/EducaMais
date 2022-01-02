@@ -1,5 +1,6 @@
 package br.uff.ic.educamais.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -43,10 +44,11 @@ public class ResourceModel {
     @ElementCollection
     private Set<String> keyWord;
 
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToMany(mappedBy = "resources")
     private List<AuthorModel> authors;
 
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "collection_id")
     private CollectionModel collection;

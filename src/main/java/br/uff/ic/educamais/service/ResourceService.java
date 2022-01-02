@@ -45,17 +45,6 @@ public class ResourceService {
         return (List<ResourceModel>) repository.findAll();
     }
 
-    public ResponseEntity<?> getResourceById(Long id) {
-        ResourceModel existingResource = repository
-                .findById(id)
-                .orElse(null);
-
-        if (existingResource == null)
-            return new ResponseEntity<>("{\"message\":\"resource does not exist\"}", HttpStatus.NOT_FOUND);
-
-        return new ResponseEntity<>(existingResource, HttpStatus.OK);
-    }
-
     public ResponseEntity<?> getResource(Long id) {
         ResourceModel existingResource = repository
                 .findById(id)
@@ -100,8 +89,8 @@ public class ResourceService {
 //        if (resource.getAuthors() != null)
 //            existingResource.setAuthors(resource.getAuthors());
 
-//        if (resource.getCollection() != null)
-//            existingResource.setCollection(resource.getCollection());
+        if (resource.getCollection() != null)
+            existingResource.setCollection(resource.getCollection());
 
         return new ResponseEntity<>(repository.save(existingResource), HttpStatus.OK);
 
