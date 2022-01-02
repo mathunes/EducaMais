@@ -35,4 +35,9 @@ public class ResourceController {
         return service.updateResource(resource);
     }
 
+    @DeleteMapping("/resource/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        return service.deleteResource(id);
+    }
+
 }

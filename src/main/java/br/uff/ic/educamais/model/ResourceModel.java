@@ -1,5 +1,7 @@
 package br.uff.ic.educamais.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -41,6 +43,7 @@ public class ResourceModel {
     @ElementCollection
     private Set<String> keyWord;
 
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToMany(mappedBy = "resources")
     private List<AuthorModel> authors;
 

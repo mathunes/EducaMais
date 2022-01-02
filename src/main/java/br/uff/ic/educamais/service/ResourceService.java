@@ -107,4 +107,18 @@ public class ResourceService {
 
     }
 
+    public ResponseEntity<?> deleteResource(Long id) {
+
+        ResourceModel existingResource = repository
+                .findById(id)
+                .orElse(null);
+
+        if (existingResource == null)
+            return new ResponseEntity<>("{\"message\":\"resource does not exist\"}", HttpStatus.NOT_FOUND);
+
+        repository.deleteById(id);
+
+        return new ResponseEntity<>("{\"message\":\"removed resource\"}", HttpStatus.OK);
+    }
+
 }
