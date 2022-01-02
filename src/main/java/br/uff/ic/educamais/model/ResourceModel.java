@@ -27,12 +27,12 @@ public class ResourceModel {
     @Lob
     private byte[] image;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date createdAt;
 
-    @Column(name = "registered_at", nullable = false)
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date registeredAt;

@@ -1,5 +1,7 @@
 package br.uff.ic.educamais.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -25,8 +27,13 @@ public class AuthorModel {
     @Column(nullable = false, length = 19)
     private String orcid;
 
+    @JsonIgnore
     @ManyToMany
-    @JoinTable(name = "author_resource", joinColumns = @JoinColumn(name = "fk_author"), inverseJoinColumns = @JoinColumn(name = "fk_resource"))
+    @JoinTable(
+            name = "author_resource",
+            joinColumns = @JoinColumn(name = "fk_author", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "fk_resource", referencedColumnName = "id")
+    )
     private List<ResourceModel> resources;
 
     public Long getId() {
