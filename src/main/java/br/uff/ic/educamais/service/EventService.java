@@ -96,6 +96,7 @@ public class EventService {
         if (existingEvent == null)
             return new ResponseEntity<>("{\"message\":\"resource does not exist\"}", HttpStatus.NOT_FOUND);
 
+        //Removing relationship
         existingEvent.getResources().forEach(resource -> {
 
             ResponseEntity<?> existingResource = resourceService.getResource(resource.getId());
