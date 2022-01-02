@@ -2,6 +2,7 @@ package br.uff.ic.educamais.controller;
 
 import br.uff.ic.educamais.model.AuthorModel;
 import br.uff.ic.educamais.model.EventModel;
+import br.uff.ic.educamais.model.ResourceModel;
 import br.uff.ic.educamais.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,11 @@ public class EventController {
     @GetMapping("/event")
     public List<EventModel> readAll() {
         return service.getEvent();
+    }
+
+    @PutMapping("/event")
+    public ResponseEntity<?> update(@RequestBody EventModel event) {
+        return service.updateEvent(event);
     }
 
 

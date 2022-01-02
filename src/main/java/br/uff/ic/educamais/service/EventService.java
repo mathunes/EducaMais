@@ -57,4 +57,34 @@ public class EventService {
         return new ResponseEntity<>(existingEvent, HttpStatus.OK);
     }
 
+    public ResponseEntity<?> updateEvent(EventModel event) {
+        EventModel existingEvent = repository
+                .findById(event.getId())
+                .orElse(null);
+
+        if (existingEvent == null)
+            return new ResponseEntity<>("{\"message\":\"event does not exist\"}", HttpStatus.NOT_FOUND);
+
+        if (event.getTitle() != null)
+            existingEvent.setTitle(event.getTitle());
+
+        if (event.getDescription() != null)
+            existingEvent.setDescription(event.getDescription());
+
+        if (event.getImage() != null)
+            existingEvent.setImage(event.getImage());
+
+//        if (event.getResources() != null)
+//            existingEvent.setResources(event.getResources());
+
+        if (event.getStartDate() != null)
+            existingEvent.setStartDate(event.getStartDate());
+
+        if (event.getEndDate() != null)
+            existingEvent.setEndDate(event.getEndDate());
+
+        return new ResponseEntity<>(repository.save(existingEvent), HttpStatus.OK);
+
+    }
+
 }
