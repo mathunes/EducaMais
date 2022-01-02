@@ -44,10 +44,10 @@ public class ResourceModel {
     @ElementCollection
     private Set<String> keyWord;
 
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToMany(mappedBy = "resources")
     private List<AuthorModel> authors;
 
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "collection_id")

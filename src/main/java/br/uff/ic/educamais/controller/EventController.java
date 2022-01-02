@@ -36,5 +36,9 @@ public class EventController {
         return service.updateEvent(event);
     }
 
+    @DeleteMapping("/event/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        return service.deleteEvent(id);
+    }
 
 }

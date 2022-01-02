@@ -87,4 +87,32 @@ public class EventService {
 
     }
 
+    public ResponseEntity<?> deleteEvent(Long id) {
+
+        EventModel existingEvent = repository
+                .findById(id)
+                .orElse(null);
+
+        if (existingEvent == null)
+            return new ResponseEntity<>("{\"message\":\"resource does not exist\"}", HttpStatus.NOT_FOUND);
+
+        existingEvent.getResources().forEach(resource -> {
+
+            ResponseEntity<?> existingResource = resourceService.getResource(resource.getId());
+
+            if (existingResource.getBody() instanceof ResourceModel) {
+
+                ((ResourceModel) existingResource.getBody()).setCollection(null);
+
+                resourceService.updateResource((ResourceModel) existingResource.getBody());
+
+            }
+
+        });
+
+        repository.deleteById(id);
+
+        return new ResponseEntity<>("{\"message\":\"removed resource\"}", HttpStatus.OK);
+    }
+
 }
