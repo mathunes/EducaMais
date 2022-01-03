@@ -56,6 +56,17 @@ public class ResourceService {
         return new ResponseEntity<>(existingResource, HttpStatus.OK);
     }
 
+    public ResponseEntity<?> getResourceByAuthor(Long id) {
+        ResponseEntity<?> existingAuthor = authorService.getAuthorById(id);
+
+        if (existingAuthor.getStatusCodeValue() == 404)
+            return new ResponseEntity<>("{\"message\":\"author does not exist\"}", HttpStatus.NOT_FOUND);
+
+        List<ResourceModel> resources = repository.findByAuthor(id);
+
+        return new ResponseEntity<>(resources, HttpStatus.OK);
+    }
+
     public ResponseEntity<?> updateResource(ResourceModel resource) {
         ResourceModel existingResource = repository
                 .findById(resource.getId())

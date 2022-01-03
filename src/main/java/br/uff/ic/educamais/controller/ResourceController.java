@@ -30,6 +30,11 @@ public class ResourceController {
         return service.getResource(id);
     }
 
+    @GetMapping("/resource/author/{id}")
+    public ResponseEntity<?> readByAuthor(@PathVariable("id") Long id) {
+        return service.getResourceByAuthor(id);
+    }
+
     @PutMapping("/resource")
     public ResponseEntity<?> update(@RequestBody ResourceModel resource) {
         return service.updateResource(resource);

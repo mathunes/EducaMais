@@ -7,4 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ResourceRepository extends CrudRepository<ResourceModel, Long> {
+
+    @Query("SELECT r FROM resource r INNER JOIN r.authors a WHERE a.id = ?1")
+    List<ResourceModel> findByAuthor(Long idAuthor);
+
 }
