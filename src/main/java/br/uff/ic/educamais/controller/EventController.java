@@ -1,13 +1,14 @@
 package br.uff.ic.educamais.controller;
 
-import br.uff.ic.educamais.model.AuthorModel;
 import br.uff.ic.educamais.model.EventModel;
-import br.uff.ic.educamais.model.ResourceModel;
 import br.uff.ic.educamais.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -29,6 +30,17 @@ public class EventController {
     @GetMapping("/event")
     public List<EventModel> readAll() {
         return service.getEvents();
+    }
+
+    @GetMapping("/event/period")
+    public List<EventModel> readByPeriodOfTime(
+            @RequestParam("startDate") String startDate,
+            @RequestParam("endDate") String endDate
+    ) throws ParseException {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+        return service.getEventsByPeriodOfTime(formatter.parse(startDate), formatter.parse(endDate));
     }
 
     @PutMapping("/event")

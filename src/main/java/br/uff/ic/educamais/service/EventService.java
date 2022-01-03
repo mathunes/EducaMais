@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -53,6 +54,10 @@ public class EventService {
             return new ResponseEntity<>("{\"message\":\"event does not exist\"}", HttpStatus.NOT_FOUND);
 
         return new ResponseEntity<>(existingEvent, HttpStatus.OK);
+    }
+
+    public List<EventModel> getEventsByPeriodOfTime(Date startDate, Date endDate) {
+        return repository.findByPeriodOfTime(startDate, endDate);
     }
 
     public ResponseEntity<?> updateEvent(EventModel event) {

@@ -9,12 +9,12 @@ import java.util.Date;
 @PrimaryKeyJoinColumn(name="id")
 public class EventModel extends CollectionModel {
 
-    @Column(name = "start_date", nullable = false)
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date startDate;
 
-    @Column(name = "end_date", nullable = false)
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date endDate;
