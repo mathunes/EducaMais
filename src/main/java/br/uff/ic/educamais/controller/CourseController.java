@@ -1,7 +1,6 @@
 package br.uff.ic.educamais.controller;
 
 import br.uff.ic.educamais.model.CourseModel;
-import br.uff.ic.educamais.model.EventModel;
 import br.uff.ic.educamais.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
