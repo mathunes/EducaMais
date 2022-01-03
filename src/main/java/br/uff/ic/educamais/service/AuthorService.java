@@ -23,7 +23,7 @@ public class AuthorService {
         return (List<AuthorModel>) repository.findAll();
     }
 
-    public ResponseEntity<?> getAuthorById(Long id) {
+    public ResponseEntity<?> getAuthor(Long id) {
         AuthorModel existingAuthor = repository
                 .findById(id)
                 .orElse(null);
@@ -32,6 +32,10 @@ public class AuthorService {
             return new ResponseEntity<>("{\"message\":\"author does not exist\"}", HttpStatus.NOT_FOUND);
 
         return new ResponseEntity<>(existingAuthor, HttpStatus.OK);
+    }
+
+    public List<AuthorModel> getAuthorsByLastName(String lastName) {
+        return repository.findByLastName(lastName);
     }
 
     public ResponseEntity<?> updateAuthor(AuthorModel author) {

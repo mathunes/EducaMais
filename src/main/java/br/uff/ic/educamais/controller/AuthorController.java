@@ -20,12 +20,17 @@ public class AuthorController {
 
     @GetMapping("/author/{id}")
     public ResponseEntity<?> read(@PathVariable("id") Long id) {
-        return service.getAuthorById(id);
+        return service.getAuthor(id);
     }
 
     @GetMapping("/author")
     public List<AuthorModel> readAll() {
         return service.getAuthors();
+    }
+
+    @GetMapping("/author/lastName/{lastName}")
+    public List<AuthorModel> readByLastName(@PathVariable("lastName") String lastName) {
+        return service.getAuthorsByLastName(lastName);
     }
 
     @PutMapping("/author")

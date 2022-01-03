@@ -29,7 +29,7 @@ public class ResourceService {
 
         resource.getAuthors().forEach(author -> {
 
-            ResponseEntity<?> existingAuthor = authorService.getAuthorById(author.getId());
+            ResponseEntity<?> existingAuthor = authorService.getAuthor(author.getId());
 
             if (existingAuthor.getBody() instanceof AuthorModel) {
 
@@ -60,7 +60,7 @@ public class ResourceService {
     }
 
     public ResponseEntity<?> getResourceByAuthor(Long id) {
-        ResponseEntity<?> existingAuthor = authorService.getAuthorById(id);
+        ResponseEntity<?> existingAuthor = authorService.getAuthor(id);
 
         if (existingAuthor.getStatusCodeValue() == 404)
             return new ResponseEntity<>("{\"message\":\"author does not exist\"}", HttpStatus.NOT_FOUND);
