@@ -40,11 +40,11 @@ public class CourseService {
         return newCourse;
     }
 
-    public List<CourseModel> getCourse() {
+    public List<CourseModel> getCourses() {
         return (List<CourseModel>) repository.findAll();
     }
 
-    public ResponseEntity<?> getCourseById(Long id) {
+    public ResponseEntity<?> getCourse(Long id) {
         CourseModel existingCourse = repository
                 .findById(id)
                 .orElse(null);

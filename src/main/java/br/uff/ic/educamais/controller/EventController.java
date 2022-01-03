@@ -23,12 +23,12 @@ public class EventController {
 
     @GetMapping("/event/{id}")
     public ResponseEntity<?> read(@PathVariable("id") Long id) {
-        return service.getEventById(id);
+        return service.getEvent(id);
     }
 
     @GetMapping("/event")
     public List<EventModel> readAll() {
-        return service.getEvent();
+        return service.getEvents();
     }
 
     @PutMapping("/event")

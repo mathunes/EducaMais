@@ -40,11 +40,11 @@ public class EventService {
         return newEvent;
     }
 
-    public List<EventModel> getEvent() {
+    public List<EventModel> getEvents() {
         return (List<EventModel>) repository.findAll();
     }
 
-    public ResponseEntity<?> getEventById(Long id) {
+    public ResponseEntity<?> getEvent(Long id) {
         EventModel existingEvent = repository
                 .findById(id)
                 .orElse(null);

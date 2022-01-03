@@ -21,12 +21,12 @@ public class CourseController {
 
     @GetMapping("/course/{id}")
     public ResponseEntity<?> read(@PathVariable("id") Long id) {
-        return service.getCourseById(id);
+        return service.getCourse(id);
     }
 
     @GetMapping("/course")
     public List<CourseModel> readAll() {
-        return service.getCourse();
+        return service.getCourses();
     }
 
     @PutMapping("/course")

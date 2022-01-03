@@ -20,6 +20,9 @@ public class ResourceService {
     @Autowired
     private AuthorService authorService;
 
+    @Autowired
+    private CollectionService collectionService;
+
     public ResourceModel saveResource(@RequestBody ResourceModel resource) {
 
         ResourceModel newResource = repository.save(resource);
@@ -63,6 +66,24 @@ public class ResourceService {
             return new ResponseEntity<>("{\"message\":\"author does not exist\"}", HttpStatus.NOT_FOUND);
 
         List<ResourceModel> resources = repository.findByAuthor(id);
+
+        return new ResponseEntity<>(resources, HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> getResourceByCollection(Long id) {
+
+        ResponseEntity<?> existingEvent = collectionService.getCollection(id);
+
+        if (existingEvent.getStatusCodeValue() == 404) {
+
+            ResponseEntity<?> existingCourse = collectionService.getCollection(id);
+
+            if (existingCourse.getStatusCodeValue() == 404)
+                return new ResponseEntity<>("{\"message\":\"collection does not exist\"}", HttpStatus.NOT_FOUND);
+
+        }
+
+        List<ResourceModel> resources = repository.findByCollection(id);
 
         return new ResponseEntity<>(resources, HttpStatus.OK);
     }
