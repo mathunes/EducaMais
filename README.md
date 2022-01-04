@@ -3,7 +3,7 @@
 ## Descrição do Projeto
 <p align="center"><b>Educa Mais</b> é uma aplicação desenvolvida como requisito parcial para conclusão da disciplina Desenvolvimento de Aplicações Corporativas - 2021.2, ministrada pelo professor <a href="https://github.com/jviterbo" target="_blank">José Viterbo Filho</a> na Universidade Federal Fluminense.</p>
 
-###Documentação API
+### Documentação API
 
 [Documentação](https://github.com/mathunes/EducaMais/blob/main/docs/restapi.md)
 
