@@ -171,5 +171,5 @@ Delete a resource.
 Return example:
 
 	{
-		"message": "removed resource"
+        "message": "removed resource"
 	}
