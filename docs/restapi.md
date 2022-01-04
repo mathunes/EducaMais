@@ -158,7 +158,7 @@ Update a resource.
 Put example to update resource's title:
 
 	{
-		"id": 1,
+        "id": 1,
 	    "title": "New resource title"
 	}
 
