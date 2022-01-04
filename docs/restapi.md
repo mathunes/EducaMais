@@ -270,7 +270,7 @@ Put example to update author's name:
 
 	{
         "id": 1,
-	    "name": "New author"
+	    "name": "New author name"
 	}
 
 #### DELETE
@@ -283,4 +283,136 @@ Return example:
 
 	{
         "message": "removed author"
+	}
+
+## Event
+
+The Event List represents a cluster of resource entity items.
+
+|Property|Description|
+|--|--|
+|id|The unique identifier|
+|title|The title of event|
+|description|The description of event|
+|image|The representative image in base64|
+|resources|The list of resources|
+|startDate|The start date of event|
+|endDate|The end date of event|
+
+### Endpoints Event
+
+#### POST
+
+Save an event.
+
+> /event
+
+Post example:
+
+    {
+        "title": "Event title",
+        "description": "Event description",
+        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "resources": [
+            {
+                "id": 6
+            }
+        ],
+        "startDate": "2022-01-01",
+        "endDate": "2022-01-30"
+    }
+
+#### GET
+
+Returns a list of all events.
+
+> /event
+
+Return example:
+
+    [
+        {
+            "id": 1,
+            "title": "Event title",
+            "description": "Event description",
+            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "resources": [
+                {
+                    "id": 6
+                }
+            ],
+            "startDate": "2022-01-01",
+            "endDate": "2022-01-30"
+        }
+    ]
+
+#### GET
+
+Return an event.
+
+> /event/1
+
+Return example:
+
+    {
+        "id": 1,
+        "title": "Event title",
+        "description": "Event description",
+        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "resources": [
+            {
+                "id": 6
+            }
+        ],
+        "startDate": "2022-01-01",
+        "endDate": "2022-01-30"
+    }
+
+#### GET
+
+Return event by period of time.
+
+> /event/period?startDate=2021-12-01&endDate=2024-12-31
+
+Return example:
+
+    [
+        {
+            "id": 1,
+            "title": "Event title",
+            "description": "Event description",
+            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "resources": [
+                {
+                    "id": 6
+                }
+            ],
+            "startDate": "2022-01-02",
+            "endDate": "2023-12-29"
+        }
+    ]
+
+#### PUT
+
+Update an event.
+
+> /event
+
+Put example to update event's title:
+
+	{
+        "id": 1,
+	    "title": "New title event"
+	}
+
+#### DELETE
+
+Delete an event.
+
+>/event/1
+
+Return example:
+
+	{
+        "message": "removed event"
 	}
