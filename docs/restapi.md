@@ -416,3 +416,108 @@ Return example:
 	{
         "message": "removed event"
 	}
+
+
+## Course
+
+The Course List represents a cluster of resource entity items.
+
+|Property|Description|
+|--|--|
+|id|The unique identifier|
+|title|The title of course|
+|description|The description of course|
+|image|The representative image in base64|
+|resources|The list of resources|
+|registerDate|The register date of course|
+
+### Endpoints Course
+
+#### POST
+
+Save a course.
+
+> /course
+
+Post example:
+
+    {
+        "title": "Course title",
+        "description": "Course description",
+        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "resources": [
+            {
+                "id": 6
+            }
+        ],
+        "registerDate": "2022-01-01"
+    }
+
+#### GET
+
+Returns a list of all courses.
+
+> /course
+
+Return example:
+
+    [
+        {
+            "id": 1,
+            "title": "Course title",
+            "description": "Course description",
+            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "resources": [
+                {
+                    "id": 6
+                }
+            ],
+            "registerDate": "2022-01-01"
+        }
+    ]
+
+#### GET
+
+Return a course.
+
+> /course/1
+
+Return example:
+
+    {
+        "id": 1,
+        "title": "Course title",
+        "description": "Course description",
+        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "resources": [
+            {
+                "id": 6
+            }
+        ],
+        "registerDate": "2022-01-01"
+    }
+
+#### PUT
+
+Update a course.
+
+> /course
+
+Put example to update course's title:
+
+	{
+        "id": 1,
+	    "title": "New title course"
+	}
+
+#### DELETE
+
+Delete a course.
+
+> /course/1
+
+Return example:
+
+	{
+        "message": "removed course"
+	}
