@@ -2,7 +2,7 @@
 
 Documentation of endpoint to catalog educational resources.
 
-# Resource
+## Resource
 
 The Resource List represents all education resource.
 
@@ -18,9 +18,9 @@ The Resource List represents all education resource.
 |keyWord|The keywords list|
 |authors|The authors list|
 
-## Endpoints Resource
+### Endpoints Resource
 
-### POST
+#### POST
 
 Save a resource.
 
@@ -36,16 +36,16 @@ Post example:
 	    "createdAt": "2021-12-21",
 	    "registeredAt": "2021-12-21",
 	    "keyWord": [
-		    "keyword example"
+            "keyword example"
 	    ],
 	    "authors": [
-		    {
-			    "id": 1
-		    }
+            {
+                "id": 1
+            }
 	    ]
 	}
 
-### GET
+#### GET
 
 Returns a list of all resources.
 
@@ -67,7 +67,7 @@ Return example:
         }
     ]
 
-### GET
+#### GET
 
 Return a resource.
 
@@ -87,9 +87,9 @@ Return example:
 	    "authors": []
 	}
 
-### GET
+#### GET
 
-Return a resource by author.
+Return resources by an author.
 
 > /resource/author/1
 
@@ -107,20 +107,20 @@ Return example:
             "keyWord": [],
             "authors": [
 	            {
-		            "id": 2,
-		            "email": "author@email.com",
-		            "name": "Author name",
-		            "lastName": "Author lastname",
-		            "affiliation": "Affiliation",
-		            "orcid": "123456"
+                    "id": 2,
+                    "email": "author@email.com",
+                    "name": "Author name",
+                    "lastName": "Author lastname",
+                    "affiliation": "Affiliation",
+                    "orcid": "123456"
 	            }
             ]
         }
     ]
 
-### GET
+#### GET
 
-Return a resource by collection.
+Return resources by a collection.
 
 > /resource/collection/1
 
@@ -138,18 +138,18 @@ Return example:
             "keyWord": [],
             "authors": [
 	            {
-		            "id": 2,
-		            "email": "author@email.com",
-		            "name": "Author name",
-		            "lastName": "Author lastname",
-		            "affiliation": "Affiliation",
-		            "orcid": "123456"
+                    "id": 2,
+                    "email": "author@email.com",
+                    "name": "Author name",
+                    "lastName": "Author lastname",
+                    "affiliation": "Affiliation",
+                    "orcid": "123456"
 	            }
             ]
         }
     ]
 
-### PUT
+#### PUT
 
 Update a resource.
 
@@ -162,7 +162,7 @@ Put example to update resource's title:
 	    "title": "New resource title"
 	}
 
-### DELETE
+#### DELETE
 
 Delete a resource.
 
@@ -172,4 +172,115 @@ Return example:
 
 	{
         "message": "removed resource"
+	}
+
+## Author
+
+The Author List represents all authors who have resources.
+
+|Property|Description|
+|--|--|
+|id|The unique identifier|
+|email|The email of author|
+|name|The name of author|
+|lastName|The lastname of author|
+|affiliation|The affiliation of author|
+|orcid|The orcid of author|
+
+### Endpoints Author
+
+#### POST
+
+Save an author.
+
+> /author
+
+Post example:
+
+    {
+        "email": "author@email.com",
+        "name": "Author name",
+        "lastName": "Author lastname",
+        "affiliation": "Affiliation",
+        "orcid": "123456"
+    }
+
+#### GET
+
+Returns a list of all authors.
+
+> /author
+
+Return example:
+
+    [
+        {
+            "id": 2,
+            "email": "author@email.com",
+            "name": "Author name",
+            "lastName": "Author lastname",
+            "affiliation": "Affiliation",
+            "orcid": "123456"
+        }
+    ]
+
+#### GET
+
+Return an author.
+
+> /author/1
+
+Return example:
+
+    {
+        "id": 2,
+        "email": "author@email.com",
+        "name": "Author name",
+        "lastName": "Author lastname",
+        "affiliation": "Affiliation",
+        "orcid": "123456"
+    }
+
+#### GET
+
+Return authors by a lastname.
+
+> /author/lastName/silva
+
+Return example:
+
+    [
+        {
+            "id": 2,
+            "email": "author@email.com",
+            "name": "Author name",
+            "lastName": "Silva",
+            "affiliation": "Affiliation",
+            "orcid": "123456"
+        }
+    ]
+
+#### PUT
+
+Update an author.
+
+> /author
+
+Put example to update author's name:
+
+	{
+        "id": 1,
+	    "name": "New author"
+	}
+
+#### DELETE
+
+Delete a resource.
+
+>/author/1
+
+Return example:
+
+	{
+        "message": "removed author"
 	}
