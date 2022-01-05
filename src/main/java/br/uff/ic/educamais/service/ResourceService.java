@@ -117,9 +117,12 @@ public class ResourceService {
         if (resource.getKeyWord() != null)
             existingResource.setKeyWord(resource.getKeyWord());
 
-//        Verificar se é necessário
-//        if (resource.getAuthors() != null)
-//            existingResource.setAuthors(resource.getAuthors());
+        if (resource.getAuthors() != null) {
+
+            //developing
+
+        }
+
 
         if (resource.getCollection() != null)
             existingResource.setCollection(resource.getCollection());
