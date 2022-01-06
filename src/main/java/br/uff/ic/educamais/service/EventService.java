@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -77,8 +78,45 @@ public class EventService {
         if (event.getImage() != null)
             existingEvent.setImage(event.getImage());
 
-//        if (event.getResources() != null)
-//            existingEvent.setResources(event.getResources());
+        if (event.getResources() != null) {
+
+            //Removing old resources
+            existingEvent.getResources().forEach(resource -> {
+
+                ResponseEntity<?> existingResource = resourceService.getResource(resource.getId());
+
+                if (existingResource.getBody() instanceof ResourceModel) {
+
+                    ((ResourceModel) existingResource.getBody()).setCollection(null);
+
+                    resourceService.updateResource((ResourceModel) existingResource.getBody());
+
+                }
+
+            });
+
+            ArrayList<ResourceModel> newResources = new ArrayList<ResourceModel>();
+
+            //Removing old resources
+            event.getResources().forEach(resource -> {
+
+                ResponseEntity<?> existingResource = resourceService.getResource(resource.getId());
+
+                if (existingResource.getBody() instanceof ResourceModel) {
+
+                    ((ResourceModel) existingResource.getBody()).setCollection(event);
+
+                    resourceService.updateResource((ResourceModel) existingResource.getBody());
+
+                    newResources.add((ResourceModel) existingResource.getBody());
+
+                }
+
+            });
+
+            existingEvent.setResources(newResources);
+
+        }
 
         if (event.getStartDate() != null)
             existingEvent.setStartDate(event.getStartDate());
