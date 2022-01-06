@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -72,8 +73,45 @@ public class CourseService {
         if (course.getImage() != null)
             existingCourse.setImage(course.getImage());
 
-//        if (course.getResources() != null)
-//            existingCourse.setResources(course.getResources());
+        if (course.getResources() != null) {
+
+            //Removing old resources
+            existingCourse.getResources().forEach(resource -> {
+
+                ResponseEntity<?> existingResource = resourceService.getResource(resource.getId());
+
+                if (existingResource.getBody() instanceof ResourceModel) {
+
+                    ((ResourceModel) existingResource.getBody()).setCollection(null);
+
+                    resourceService.updateResource((ResourceModel) existingResource.getBody());
+
+                }
+
+            });
+
+            ArrayList<ResourceModel> newResources = new ArrayList<ResourceModel>();
+
+            //Removing old resources
+            course.getResources().forEach(resource -> {
+
+                ResponseEntity<?> existingResource = resourceService.getResource(resource.getId());
+
+                if (existingResource.getBody() instanceof ResourceModel) {
+
+                    ((ResourceModel) existingResource.getBody()).setCollection(course);
+
+                    resourceService.updateResource((ResourceModel) existingResource.getBody());
+
+                    newResources.add((ResourceModel) existingResource.getBody());
+
+                }
+
+            });
+
+            existingCourse.setResources(newResources);
+
+        }
 
         if (course.getRegisterDate() != null)
             existingCourse.setRegisterDate(course.getRegisterDate());
