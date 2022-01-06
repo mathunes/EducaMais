@@ -119,10 +119,37 @@ public class ResourceService {
 
         if (resource.getAuthors() != null) {
 
-            //developing
+            //removing old authors
+            existingResource.getAuthors().forEach(author -> {
+
+                ResponseEntity<?> existingAuthor = authorService.getAuthor(author.getId());
+
+                if (existingAuthor.getBody() instanceof AuthorModel) {
+
+                    ((AuthorModel) existingAuthor.getBody()).getResources().removeIf(r ->
+                            r.getId() == existingResource.getId()
+                    );
+
+                }
+
+            });
+
+            //adding new authors
+            resource.getAuthors().forEach(author -> {
+
+                ResponseEntity<?> existingAuthor = authorService.getAuthor(author.getId());
+
+                if (existingAuthor.getBody() instanceof AuthorModel) {
+
+                    ((AuthorModel) existingAuthor.getBody()).getResources().add(resource);
+
+                    authorService.updateAuthor((AuthorModel) existingAuthor.getBody());
+
+                }
+
+            });
 
         }
-
 
         if (resource.getCollection() != null)
             existingResource.setCollection(resource.getCollection());
@@ -139,6 +166,20 @@ public class ResourceService {
 
         if (existingResource == null)
             return new ResponseEntity<>("{\"message\":\"resource does not exist\"}", HttpStatus.NOT_FOUND);
+
+        existingResource.getAuthors().forEach(author -> {
+
+            ResponseEntity<?> existingAuthor = authorService.getAuthor(author.getId());
+
+            if (existingAuthor.getBody() instanceof AuthorModel) {
+
+                ((AuthorModel) existingAuthor.getBody()).getResources().removeIf(r ->
+                        r.getId() == existingResource.getId()
+                );
+
+            }
+
+        });
 
         repository.deleteById(id);
 
