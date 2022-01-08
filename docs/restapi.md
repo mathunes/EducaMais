@@ -21,7 +21,7 @@ The Author List represents all authors who have resources.
 
 Save an author.
 
-> /author
+> educa-mais.herokuapp.com/author
 
 Post example:
 
@@ -37,13 +37,13 @@ Post example:
 
 Returns a list of all authors.
 
-> /author
+> educa-mais.herokuapp.com/author
 
 Return example:
 
     [
         {
-            "id": 2,
+            "id": 1,
             "email": "author@email.com",
             "name": "Author name",
             "lastName": "Author lastname",
@@ -56,7 +56,7 @@ Return example:
 
 Return an author.
 
-> /author/1
+> educa-mais.herokuapp.com/author/1
 
 Return example:
 
@@ -73,16 +73,16 @@ Return example:
 
 Return authors by a lastname.
 
-> /author/lastName/silva
+> educa-mais.herokuapp.com/author/lastName/Author lastname
 
 Return example:
 
     [
         {
-            "id": 2,
+            "id": 1,
             "email": "author@email.com",
             "name": "Author name",
-            "lastName": "Silva",
+            "lastName": "Author lastname",
             "affiliation": "Affiliation",
             "orcid": "123456"
         }
@@ -92,7 +92,7 @@ Return example:
 
 Update an author.
 
-> /author
+> educa-mais.herokuapp.com/author
 
 Put example to update author's name:
 
