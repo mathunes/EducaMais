@@ -2,11 +2,11 @@
 
 Documentation of endpoint to catalog educational resources.
 
-[Educa Mais Endpoint](https://educa-mais.herokuapp.com)
+[Educa Mais REST API](https://educa-mais.herokuapp.com)
 
 ## Author
 
-The Author List represents all authors who have resources.
+The Author List represents all authors.
 
 |Property|Description|
 |--|--|
