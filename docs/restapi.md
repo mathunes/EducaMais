@@ -94,12 +94,16 @@ Update an author.
 
 > educa-mais.herokuapp.com/author
 
-Put example to update author's name:
+Put example to update authors attributes:
 
 	{
-        "id": 1,
-	    "name": "New author name"
-	}
+		"id": 1,
+        "email": "newauthor@email.com",
+        "name": "New author name",
+        "lastName": "New author lastname",
+        "affiliation": "New affiliation",
+        "orcid": "12345678"
+    }
 
 #### DELETE
 
@@ -135,7 +139,7 @@ The Resource List represents all education resource.
 
 Save a resource.
 
-> /resource
+> educa-mais.herokuapp.com/resource
 
 Post example:
 
@@ -160,7 +164,7 @@ Post example:
 
 Returns a list of all resources.
 
-> /resource
+> educa-mais.herokuapp.com/resource
 
 Return example:
 
@@ -193,7 +197,7 @@ Return example:
 
 Return a resource.
 
-> /resource/2
+> educa-mais.herokuapp.com/resource/2
 
 Return example:
 
@@ -224,7 +228,7 @@ Return example:
 
 Return resources by an author.
 
-> /resource/author/1
+> educa-mais.herokuapp.com/resource/author/1
 
 Return example:
 
@@ -257,7 +261,7 @@ Return example:
 
 Return resources by a collection.
 
-> /resource/collection/3
+> educa-mais.herokuapp.com/resource/collection/3
 
 Return example:
 
@@ -290,7 +294,7 @@ Return example:
 
 Update a resource.
 
-> /resource
+> educa-mais.herokuapp.com/resource
 
 Put example to update resources attributes:
 
@@ -316,7 +320,7 @@ Put example to update resources attributes:
 
 Delete a resource.
 
->/resource/2
+> educa-mais.herokuapp.com/resource/2
 
 Return example:
 
@@ -344,17 +348,17 @@ The Event List represents a cluster of resource entity items.
 
 Save an event.
 
-> /event
+> educa-mais.herokuapp.com/event
 
 Post example:
 
     {
         "title": "Event title",
         "description": "Event description",
-        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
         "resources": [
             {
-                "id": 6
+                "id": 2
             }
         ],
         "startDate": "2022-01-01",
@@ -365,19 +369,38 @@ Post example:
 
 Returns a list of all events.
 
-> /event
+> educa-mais.herokuapp.com/event
 
 Return example:
 
     [
         {
-            "id": 1,
+            "id": 3,
             "title": "Event title",
             "description": "Event description",
-            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
             "resources": [
                 {
-                    "id": 6
+                    "id": 2,
+                    "title": "New resource title",
+                    "description": "New resource description",
+                    "link": "newresource.com",
+                    "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+                    "createdAt": "2021-12-22",
+                    "registeredAt": "2021-12-22",
+                    "keyWord": [
+                        "new keyword example"
+                    ],
+                    "authors": [
+                        {
+                            "id": 4,
+                            "email": "author@email.com",
+                            "name": "Author name",
+                            "lastName": "Author lastname",
+                            "affiliation": "Affiliation",
+                            "orcid": "123456"
+                        }
+                    ]
                 }
             ],
             "startDate": "2022-01-01",
@@ -389,18 +412,37 @@ Return example:
 
 Return an event.
 
-> /event/1
+> educa-mais.herokuapp.com/event/3
 
 Return example:
 
     {
-        "id": 1,
+        "id": 3,
         "title": "Event title",
         "description": "Event description",
-        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
         "resources": [
             {
-                "id": 6
+                "id": 2,
+                "title": "New resource title",
+                "description": "New resource description",
+                "link": "newresource.com",
+                "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+                "createdAt": "2021-12-22",
+                "registeredAt": "2021-12-22",
+                "keyWord": [
+                    "new keyword example"
+                ],
+                "authors": [
+                    {
+                        "id": 4,
+                        "email": "author@email.com",
+                        "name": "Author name",
+                        "lastName": "Author lastname",
+                        "affiliation": "Affiliation",
+                        "orcid": "123456"
+                    }
+                ]
             }
         ],
         "startDate": "2022-01-01",
@@ -411,23 +453,42 @@ Return example:
 
 Return event by period of time.
 
-> /event/period?startDate=2021-12-01&endDate=2024-12-31
+> educa-mais.herokuapp.com/event/period?startDate=2021-12-01&endDate=2024-12-31
 
 Return example:
 
     [
         {
-            "id": 1,
+            "id": 3,
             "title": "Event title",
             "description": "Event description",
-            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
             "resources": [
                 {
-                    "id": 6
+                    "id": 2,
+                    "title": "New resource title",
+                    "description": "New resource description",
+                    "link": "newresource.com",
+                    "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+                    "createdAt": "2021-12-22",
+                    "registeredAt": "2021-12-22",
+                    "keyWord": [
+                        "new keyword example"
+                    ],
+                    "authors": [
+                        {
+                            "id": 4,
+                            "email": "author@email.com",
+                            "name": "Author name",
+                            "lastName": "Author lastname",
+                            "affiliation": "Affiliation",
+                            "orcid": "123456"
+                        }
+                    ]
                 }
             ],
-            "startDate": "2022-01-02",
-            "endDate": "2023-12-29"
+            "startDate": "2022-01-01",
+            "endDate": "2022-01-30"
         }
     ]
 
@@ -435,20 +496,29 @@ Return example:
 
 Update an event.
 
-> /event
+> educa-mais.herokuapp.com/event
 
-Put example to update event's title:
+Put example to update events attributes:
 
 	{
-        "id": 1,
-	    "title": "New title event"
-	}
+		"id": 3,
+        "title": "New event title",
+        "description": "New event description",
+        "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+        "resources": [
+            {
+                "id": 5
+            }
+        ],
+        "startDate": "2022-01-02",
+        "endDate": "2022-01-29"
+    }
 
 #### DELETE
 
 Delete an event.
 
->/event/1
+> educa-mais.herokuapp.com/event/3
 
 Return example:
 
@@ -476,42 +546,61 @@ The Course List represents a cluster of resource entity items.
 
 Save a course.
 
-> /course
+> educa-mais.herokuapp.com/course
 
 Post example:
 
     {
         "title": "Course title",
         "description": "Course description",
-        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "registerDate": "2021-12-22",
+        "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
         "resources": [
             {
-                "id": 6
+                "id": 2
             }
-        ],
-        "registerDate": "2022-01-01"
+        ]
     }
 
 #### GET
 
 Returns a list of all courses.
 
-> /course
+> educa-mais.herokuapp.com/course
 
 Return example:
 
     [
         {
-            "id": 1,
+            "id": 8,
             "title": "Course title",
             "description": "Course description",
-            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
             "resources": [
                 {
-                    "id": 6
+                    "id": 2,
+                    "title": "New resource title",
+                    "description": "New resource description",
+                    "link": "newresource.com",
+                    "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+                    "createdAt": "2021-12-22",
+                    "registeredAt": "2021-12-22",
+                    "keyWord": [
+                        "new keyword example"
+                    ],
+                    "authors": [
+                        {
+                            "id": 4,
+                            "email": "author@email.com",
+                            "name": "Author name",
+                            "lastName": "Author lastname",
+                            "affiliation": "Affiliation",
+                            "orcid": "123456"
+                        }
+                    ]
                 }
             ],
-            "registerDate": "2022-01-01"
+            "registerDate": "2021-12-22"
         }
     ]
 
@@ -519,41 +608,68 @@ Return example:
 
 Return a course.
 
-> /course/1
+> educa-mais.herokuapp.com/course/8
 
 Return example:
 
     {
-        "id": 1,
+        "id": 8,
         "title": "Course title",
         "description": "Course description",
-        "image": "9j4AAQSkZJRgABAQAASABIA...",
+        "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
         "resources": [
             {
-                "id": 6
+                "id": 2,
+                "title": "New resource title",
+                "description": "New resource description",
+                "link": "newresource.com",
+                "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+                "createdAt": "2021-12-22",
+                "registeredAt": "2021-12-22",
+                "keyWord": [
+                    "new keyword example"
+                ],
+                "authors": [
+                    {
+                        "id": 4,
+                        "email": "author@email.com",
+                        "name": "Author name",
+                        "lastName": "Author lastname",
+                        "affiliation": "Affiliation",
+                        "orcid": "123456"
+                    }
+                ]
             }
         ],
-        "registerDate": "2022-01-01"
+        "registerDate": "2021-12-22"
     }
 
 #### PUT
 
 Update a course.
 
-> /course
+> educa-mais.herokuapp.com/course
 
-Put example to update course's title:
+Put example to update courses attributes:
 
 	{
-        "id": 1,
-	    "title": "New title course"
-	}
+        "id": 8,
+        "title": "New course title",
+        "description": "New course description",
+        "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+        "registerDate": "2021-12-23",
+        "resources": [
+            {
+                "id": 9
+            }
+        ]
+    }
 
 #### DELETE
 
 Delete a course.
 
-> /course/1
+> educa-mais.herokuapp.com/course/8
 
 Return example:
 
