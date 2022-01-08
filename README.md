@@ -1,7 +1,7 @@
-<h1 align="center">Educa Mais</h1>
+# Educa Mais
 
 ## Project description
-<p align="center"><b>Educa Mais</b> is an application developed as a partial requirement for completing the course Corporate Application Development - 2021.2, taught by professor <a href="https://github.com/jviterbo" target="_blank"> José Viterbo Filho </a> na Universidade Federal Fluminense.</p>
+<b>Educa Mais</b> is an application developed as a partial requirement for completing the course Corporate Application Development - 2021.2, taught by professor <a href="https://github.com/jviterbo" target="_blank"> José Viterbo Filho </a> na Universidade Federal Fluminense.
 
 ### REST API Documentation
 
