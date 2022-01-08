@@ -7,9 +7,9 @@
 
 [Documentation](https://github.com/mathunes/EducaMais/blob/main/docs/restapi.md)
 
-### REST API Link
+### Endpoint
 
-[Educa Mais API](https://educa-mais.herokuapp.com)
+[Educa Mais](https://educa-mais.herokuapp.com)
 
 ### Class model
 
