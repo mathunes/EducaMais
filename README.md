@@ -7,6 +7,10 @@
 
 [Documentation](https://github.com/mathunes/EducaMais/blob/main/docs/restapi.md)
 
+### REST API Link
+
+[Educa Mais API](https://educa-mais.herokuapp.com)
+
 ### Class model
 
 <img src="https://drive.google.com/uc?export=view&id=1Clcpiv23Igv3aArPJN1cg5HILXgEAscN" style="width: 320px; height: auto" alt="Class model" />
