@@ -2,6 +2,117 @@
 
 Documentation of endpoint to catalog educational resources.
 
+## Author
+
+The Author List represents all authors who have resources.
+
+|Property|Description|
+|--|--|
+|id|The unique identifier|
+|email|The email of author|
+|name|The name of author|
+|lastName|The lastname of author|
+|affiliation|The affiliation of author|
+|orcid|The orcid of author|
+
+### Endpoints Author
+
+#### POST
+
+Save an author.
+
+> /author
+
+Post example:
+
+    {
+        "email": "author@email.com",
+        "name": "Author name",
+        "lastName": "Author lastname",
+        "affiliation": "Affiliation",
+        "orcid": "123456"
+    }
+
+#### GET
+
+Returns a list of all authors.
+
+> /author
+
+Return example:
+
+    [
+        {
+            "id": 2,
+            "email": "author@email.com",
+            "name": "Author name",
+            "lastName": "Author lastname",
+            "affiliation": "Affiliation",
+            "orcid": "123456"
+        }
+    ]
+
+#### GET
+
+Return an author.
+
+> /author/1
+
+Return example:
+
+    {
+        "id": 2,
+        "email": "author@email.com",
+        "name": "Author name",
+        "lastName": "Author lastname",
+        "affiliation": "Affiliation",
+        "orcid": "123456"
+    }
+
+#### GET
+
+Return authors by a lastname.
+
+> /author/lastName/silva
+
+Return example:
+
+    [
+        {
+            "id": 2,
+            "email": "author@email.com",
+            "name": "Author name",
+            "lastName": "Silva",
+            "affiliation": "Affiliation",
+            "orcid": "123456"
+        }
+    ]
+
+#### PUT
+
+Update an author.
+
+> /author
+
+Put example to update author's name:
+
+	{
+        "id": 1,
+	    "name": "New author name"
+	}
+
+#### DELETE
+
+Delete a resource.
+
+>/author/1
+
+Return example:
+
+	{
+        "message": "removed author"
+	}
+
 ## Resource
 
 The Resource List represents all education resource.
@@ -172,117 +283,6 @@ Return example:
 
 	{
         "message": "removed resource"
-	}
-
-## Author
-
-The Author List represents all authors who have resources.
-
-|Property|Description|
-|--|--|
-|id|The unique identifier|
-|email|The email of author|
-|name|The name of author|
-|lastName|The lastname of author|
-|affiliation|The affiliation of author|
-|orcid|The orcid of author|
-
-### Endpoints Author
-
-#### POST
-
-Save an author.
-
-> /author
-
-Post example:
-
-    {
-        "email": "author@email.com",
-        "name": "Author name",
-        "lastName": "Author lastname",
-        "affiliation": "Affiliation",
-        "orcid": "123456"
-    }
-
-#### GET
-
-Returns a list of all authors.
-
-> /author
-
-Return example:
-
-    [
-        {
-            "id": 2,
-            "email": "author@email.com",
-            "name": "Author name",
-            "lastName": "Author lastname",
-            "affiliation": "Affiliation",
-            "orcid": "123456"
-        }
-    ]
-
-#### GET
-
-Return an author.
-
-> /author/1
-
-Return example:
-
-    {
-        "id": 2,
-        "email": "author@email.com",
-        "name": "Author name",
-        "lastName": "Author lastname",
-        "affiliation": "Affiliation",
-        "orcid": "123456"
-    }
-
-#### GET
-
-Return authors by a lastname.
-
-> /author/lastName/silva
-
-Return example:
-
-    [
-        {
-            "id": 2,
-            "email": "author@email.com",
-            "name": "Author name",
-            "lastName": "Silva",
-            "affiliation": "Affiliation",
-            "orcid": "123456"
-        }
-    ]
-
-#### PUT
-
-Update an author.
-
-> /author
-
-Put example to update author's name:
-
-	{
-        "id": 1,
-	    "name": "New author name"
-	}
-
-#### DELETE
-
-Delete a resource.
-
->/author/1
-
-Return example:
-
-	{
-        "message": "removed author"
 	}
 
 ## Event
