@@ -105,7 +105,7 @@ Put example to update author's name:
 
 Delete a resource.
 
->/author/1
+> educa-mais.herokuapp.com/author/1
 
 Return example:
 
@@ -140,21 +140,21 @@ Save a resource.
 Post example:
 
 	{
-	    "title": "Resource title",
-	    "description": "Resource description",
-	    "link": "resource.com",
-	    "image": "9j4AAQSkZJRgABAQAASABIA...",
-	    "createdAt": "2021-12-21",
-	    "registeredAt": "2021-12-21",
-	    "keyWord": [
+        "title": "Resource title",
+        "description": "Resource description",
+        "link": "resource.com",
+        "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+        "createdAt": "2021-12-21",
+        "registeredAt": "2021-12-21",
+        "keyWord": [
             "keyword example"
-	    ],
-	    "authors": [
+        ],
+        "authors": [
             {
                 "id": 1
             }
-	    ]
-	}
+        ]
+    }
 
 #### GET
 
@@ -166,15 +166,26 @@ Return example:
 
     [
         {
-            "id": 1,
+            "id": 2,
             "title": "Resource title",
             "description": "Resource description",
             "link": "resource.com",
-            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
             "createdAt": "2021-12-21",
             "registeredAt": "2021-12-21",
-            "keyWord": [],
-            "authors": []
+            "keyWord": [
+                "keyword example"
+            ],
+            "authors": [
+                {
+                    "id": 1,
+                    "email": "author@email.com",
+                    "name": "New author name",
+                    "lastName": "Author lastname",
+                    "affiliation": "Affiliation",
+                    "orcid": "123456"
+                }
+            ]
         }
     ]
 
@@ -182,21 +193,32 @@ Return example:
 
 Return a resource.
 
-> /resource/1
+> /resource/2
 
 Return example:
 
 	{
-	    "id": 1,
-	    "title": "Resource title",
-	    "description": "Resource description",
-	    "link": "resource.com",
-	    "image": "9j4AAQSkZJRgABAQAASABIA...",
-	    "createdAt": "2021-12-21",
-	    "registeredAt": "2021-12-21",
-	    "keyWord": [],
-	    "authors": []
-	}
+        "id": 2,
+        "title": "Resource title",
+        "description": "Resource description",
+        "link": "resource.com",
+        "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+        "createdAt": "2021-12-21",
+        "registeredAt": "2021-12-21",
+        "keyWord": [
+            "keyword example"
+        ],
+        "authors": [
+            {
+                "id": 1,
+                "email": "author@email.com",
+                "name": "New author name",
+                "lastName": "Author lastname",
+                "affiliation": "Affiliation",
+                "orcid": "123456"
+            }
+        ]
+    }
 
 #### GET
 
@@ -208,23 +230,25 @@ Return example:
 
     [
         {
-            "id": 1,
+            "id": 2,
             "title": "Resource title",
             "description": "Resource description",
             "link": "resource.com",
-            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
             "createdAt": "2021-12-21",
             "registeredAt": "2021-12-21",
-            "keyWord": [],
+            "keyWord": [
+                "keyword example"
+            ],
             "authors": [
-	            {
-                    "id": 2,
+                {
+                    "id": 1,
                     "email": "author@email.com",
-                    "name": "Author name",
+                    "name": "New author name",
                     "lastName": "Author lastname",
                     "affiliation": "Affiliation",
                     "orcid": "123456"
-	            }
+                }
             ]
         }
     ]
@@ -233,29 +257,31 @@ Return example:
 
 Return resources by a collection.
 
-> /resource/collection/1
+> /resource/collection/3
 
 Return example:
 
     [
         {
-            "id": 1,
+            "id": 2,
             "title": "Resource title",
             "description": "Resource description",
             "link": "resource.com",
-            "image": "9j4AAQSkZJRgABAQAASABIA...",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
             "createdAt": "2021-12-21",
             "registeredAt": "2021-12-21",
-            "keyWord": [],
+            "keyWord": [
+                "keyword example"
+            ],
             "authors": [
-	            {
-                    "id": 2,
+                {
+                    "id": 1,
                     "email": "author@email.com",
-                    "name": "Author name",
+                    "name": "New author name",
                     "lastName": "Author lastname",
                     "affiliation": "Affiliation",
                     "orcid": "123456"
-	            }
+                }
             ]
         }
     ]
@@ -266,18 +292,31 @@ Update a resource.
 
 > /resource
 
-Put example to update resource's title:
+Put example to update resources attributes:
 
 	{
-        "id": 1,
-	    "title": "New resource title"
-	}
+        "id": 2,
+        "title": "New resource title",
+        "description": "New resource description",
+        "link": "newresource.com",
+        "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+        "createdAt": "2021-12-22",
+        "registeredAt": "2021-12-22",
+        "keyWord": [
+            "new keyword example"
+        ],
+        "authors": [
+            {
+                "id": 4
+            }
+        ]
+    }
 
 #### DELETE
 
 Delete a resource.
 
->/resource/1
+>/resource/2
 
 Return example:
 
