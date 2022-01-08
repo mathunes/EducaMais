@@ -9,7 +9,7 @@
 
 ### REST API Link
 
-[Educa Mais API](educa-mais.herokuapp.com)
+[Educa Mais API](https://educa-mais.herokuapp.com)
 
 ### Class model
 
