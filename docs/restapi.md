@@ -21,7 +21,7 @@ The Author List represents all authors who have resources.
 
 Save an author.
 
-> educa-mais.herokuapp.com/author
+> https://educa-mais.herokuapp.com/author
 
 Post example:
 
@@ -37,7 +37,7 @@ Post example:
 
 Returns a list of all authors.
 
-> educa-mais.herokuapp.com/author
+> https://educa-mais.herokuapp.com/author
 
 Return example:
 
@@ -56,7 +56,7 @@ Return example:
 
 Return an author.
 
-> educa-mais.herokuapp.com/author/1
+> https://educa-mais.herokuapp.com/author/1
 
 Return example:
 
@@ -73,7 +73,7 @@ Return example:
 
 Return authors by a lastname.
 
-> educa-mais.herokuapp.com/author/lastName/Author lastname
+> https://educa-mais.herokuapp.com/author/lastName/Author lastname
 
 Return example:
 
@@ -92,7 +92,7 @@ Return example:
 
 Update an author.
 
-> educa-mais.herokuapp.com/author
+> https://educa-mais.herokuapp.com/author
 
 Put example to update authors attributes:
 
@@ -109,7 +109,7 @@ Put example to update authors attributes:
 
 Delete a resource.
 
-> educa-mais.herokuapp.com/author/1
+> https://educa-mais.herokuapp.com/author/1
 
 Return example:
 
@@ -139,7 +139,7 @@ The Resource List represents all education resource.
 
 Save a resource.
 
-> educa-mais.herokuapp.com/resource
+> https://educa-mais.herokuapp.com/resource
 
 Post example:
 
@@ -164,7 +164,7 @@ Post example:
 
 Returns a list of all resources.
 
-> educa-mais.herokuapp.com/resource
+> https://educa-mais.herokuapp.com/resource
 
 Return example:
 
@@ -197,7 +197,7 @@ Return example:
 
 Return a resource.
 
-> educa-mais.herokuapp.com/resource/2
+> https://educa-mais.herokuapp.com/resource/2
 
 Return example:
 
@@ -228,7 +228,7 @@ Return example:
 
 Return resources by an author.
 
-> educa-mais.herokuapp.com/resource/author/1
+> https://educa-mais.herokuapp.com/resource/author/1
 
 Return example:
 
@@ -261,7 +261,7 @@ Return example:
 
 Return resources by a collection.
 
-> educa-mais.herokuapp.com/resource/collection/3
+> https://educa-mais.herokuapp.com/resource/collection/3
 
 Return example:
 
@@ -294,7 +294,7 @@ Return example:
 
 Update a resource.
 
-> educa-mais.herokuapp.com/resource
+> https://educa-mais.herokuapp.com/resource
 
 Put example to update resources attributes:
 
@@ -320,7 +320,7 @@ Put example to update resources attributes:
 
 Delete a resource.
 
-> educa-mais.herokuapp.com/resource/2
+> https://educa-mais.herokuapp.com/resource/2
 
 Return example:
 
@@ -348,7 +348,7 @@ The Event List represents a cluster of resource entity items.
 
 Save an event.
 
-> educa-mais.herokuapp.com/event
+> https://educa-mais.herokuapp.com/event
 
 Post example:
 
@@ -369,7 +369,7 @@ Post example:
 
 Returns a list of all events.
 
-> educa-mais.herokuapp.com/event
+> https://educa-mais.herokuapp.com/event
 
 Return example:
 
@@ -412,7 +412,7 @@ Return example:
 
 Return an event.
 
-> educa-mais.herokuapp.com/event/3
+> https://educa-mais.herokuapp.com/event/3
 
 Return example:
 
@@ -453,7 +453,7 @@ Return example:
 
 Return event by period of time.
 
-> educa-mais.herokuapp.com/event/period?startDate=2021-12-01&endDate=2024-12-31
+> https://educa-mais.herokuapp.com/event/period?startDate=2021-12-01&endDate=2024-12-31
 
 Return example:
 
@@ -496,7 +496,7 @@ Return example:
 
 Update an event.
 
-> educa-mais.herokuapp.com/event
+> https://educa-mais.herokuapp.com/event
 
 Put example to update events attributes:
 
@@ -518,7 +518,7 @@ Put example to update events attributes:
 
 Delete an event.
 
-> educa-mais.herokuapp.com/event/3
+> https://educa-mais.herokuapp.com/event/3
 
 Return example:
 
@@ -546,7 +546,7 @@ The Course List represents a cluster of resource entity items.
 
 Save a course.
 
-> educa-mais.herokuapp.com/course
+> https://educa-mais.herokuapp.com/course
 
 Post example:
 
@@ -566,7 +566,7 @@ Post example:
 
 Returns a list of all courses.
 
-> educa-mais.herokuapp.com/course
+> https://educa-mais.herokuapp.com/course
 
 Return example:
 
@@ -608,7 +608,7 @@ Return example:
 
 Return a course.
 
-> educa-mais.herokuapp.com/course/8
+> https://educa-mais.herokuapp.com/course/8
 
 Return example:
 
@@ -648,7 +648,7 @@ Return example:
 
 Update a course.
 
-> educa-mais.herokuapp.com/course
+> https://educa-mais.herokuapp.com/course
 
 Put example to update courses attributes:
 
@@ -669,7 +669,7 @@ Put example to update courses attributes:
 
 Delete a course.
 
-> educa-mais.herokuapp.com/course/8
+> https://educa-mais.herokuapp.com/course/8
 
 Return example:
 
