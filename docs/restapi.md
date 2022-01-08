@@ -97,7 +97,7 @@ Update an author.
 Put example to update authors attributes:
 
 	{
-		"id": 1,
+        "id": 1,
         "email": "newauthor@email.com",
         "name": "New author name",
         "lastName": "New author lastname",
