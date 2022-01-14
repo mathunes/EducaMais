@@ -5,7 +5,7 @@
 
 ### REST API Documentation
 
-[Documentation](https://github.com/mathunes/EducaMais/blob/main/docs/restapi.md)
+[Documentation](https://github.com/mathunes/EducaMais/blob/main/backend/docs/restapi.md)
 
 ### REST API
 
