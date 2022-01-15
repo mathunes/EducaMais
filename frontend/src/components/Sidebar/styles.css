@@ -11,6 +11,8 @@
 
 .container div {
     height: 50%;
+    display: flex;
+    align-items: flex-start;
 }
 
 .container div img {
@@ -55,9 +57,7 @@
 @media (max-width: 750px) {
 
     .container {
-        position: relative;
         left: -1000px;
-        transition: all .5s;
     }
 
 }
