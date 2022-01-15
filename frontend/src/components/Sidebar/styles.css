@@ -4,7 +4,7 @@
     background-color: #244791;
     color: #FFFFFF;
     padding: 40px 30px;
-    position: relative;
+    position: absolute;
     left: 0;
     transition: all .5s;
 }
@@ -53,11 +53,22 @@
     align-items: flex-end;
 }
 
+#menu {
+    position: absolute;
+    left: -100px;
+    width: 24px;
+    transition: all .5s;
+}
 
 @media (max-width: 750px) {
 
     .container {
         left: -1000px;
+    }
+
+    #menu {
+        display: block;
+        left: 0;
     }
 
 }
