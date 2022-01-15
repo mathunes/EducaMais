@@ -15,6 +15,9 @@ function Sidebar() {
                     <li>Cursos</li>
                 </ul>
            </div>
+           <div>
+               <p>Sobre</p>
+           </div>
         </nav>
     )
 }
