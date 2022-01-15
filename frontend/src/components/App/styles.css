@@ -6,6 +6,10 @@
   font-family: 'Comfortaa', cursive;
 }
 
+html, body {
+  background-color: #F5F6F8;
+}
+
 .App {
   text-align: center;
 }
