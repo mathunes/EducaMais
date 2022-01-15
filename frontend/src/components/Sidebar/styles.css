@@ -29,6 +29,16 @@
     list-style-type: none;
 }
 
+.container div:first-child ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.container div:first-child ul li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .container div:first-child ul li {
     margin: 20px 0;
 }
