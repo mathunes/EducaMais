@@ -8,7 +8,9 @@ function Sidebar(props) {
     return (
         <nav className='container'>
            <div>
-                <img src={Logo} alt='logo'/>
+                <Link to="/">
+                    <img src={Logo} alt='logo'/>
+                </Link>
                 <ul>
                     <li>
                         <Link to="/autores">

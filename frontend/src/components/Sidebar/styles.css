@@ -48,3 +48,11 @@
     align-items: flex-end;
 }
 
+
+@media (max-width: 750px) {
+
+    .container {
+        display: none;
+    }
+    
+}
