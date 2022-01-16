@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function Sidebar(props) {
     return (
         <>
-            <img src={Menu} alt='menu' id="menu" />
+            {/* <img src={Menu} alt='menu' id="menu" /> */}
             <nav className='container'>
                 <div>
                         <Link to="/">

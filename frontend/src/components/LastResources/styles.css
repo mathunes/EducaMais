@@ -1,0 +1,14 @@
+.container-cards {
+    padding: 20px;
+    text-align: left;
+}
+
+.container-cards h2 {
+    margin: 20px;
+}
+
+.container-cards .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
