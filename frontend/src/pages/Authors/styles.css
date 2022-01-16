@@ -1,0 +1,4 @@
+.container-authors {
+    display: flex;
+    flex-direction: row;
+}
