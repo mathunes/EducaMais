@@ -3,10 +3,10 @@ import React from "react";
 import Card from "../../components/Card";
 import "./styles.css";
 
-function LastResources() {
+function LastEvents() {
     return (
         <div class="container-cards">
-            <h2>Últimos recursos</h2>
+            <h2>Últimos eventos</h2>
             <div className="cards">
                 <Card />
                 <Card />
@@ -16,4 +16,4 @@ function LastResources() {
     )
 }
 
-export default LastResources;
+export default LastEvents;
