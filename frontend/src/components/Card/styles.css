@@ -27,18 +27,18 @@
     text-align: left;
 }
 
-.container-card .information-card div {
+.container-card .information-card .options {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.container-card .information-card div p {
-    font-size: 12px;
-}
-
-.container-card .information-card div img {
+.container-card .information-card .options img {
     width: 14px;
     height: 14px;
+}
+
+.container-card .information-card .options div img {
+    margin-right: 10px;
 }
