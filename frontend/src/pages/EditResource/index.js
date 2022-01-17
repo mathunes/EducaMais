@@ -31,6 +31,12 @@ function EditResource() {
                             <option value="">João Mendes</option>
                         </select>
 
+                        <label for="collection">Coleção</label>
+                        <select id="collection" name="collection">
+                            <option value="">Coleção 1</option>
+                            <option value="">Coleção 2</option>
+                        </select>
+
                         <div className="btn-submit">
                             <input type="submit" value="Enviar" />
                         </div>
