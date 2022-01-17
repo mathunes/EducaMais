@@ -16,12 +16,13 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/autores" element={<Authors />} />
-            <Route exact path="/recursos" element={<Resources />} />
-            <Route exact path="/recursos/detalhes" element={<ResourceDetails />} />
-            <Route exact path="/eventos" element={<Events />} />
-            <Route exact path="/cursos" element={<Courses />} />
+            <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+            <Route exact path={process.env.PUBLIC_URL + "/autores"} element={<Authors />} />
+            <Route exact path={process.env.PUBLIC_URL + "/recursos"} element={<Resources />} />
+            <Route exact path={process.env.PUBLIC_URL + "/recursos/detalhes"} element={<ResourceDetails />} />
+            <Route exact path={process.env.PUBLIC_URL + "/recursos/editar"} element={<ResourceDetails />} />
+            <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
+            <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

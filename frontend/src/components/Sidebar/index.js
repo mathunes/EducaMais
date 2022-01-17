@@ -22,17 +22,17 @@ function Sidebar(props) {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="recursos">
+                                <Link to="/recursos">
                                     Recursos
                                 </Link>
                             </li>
                             <li>
-                                <Link to="eventos">
+                                <Link to="/eventos">
                                     Eventos
                                 </Link>
                             </li>
                             <li>
-                                <Link to="cursos">
+                                <Link to="/cursos">
                                     Cursos
                                 </Link>
                             </li>
