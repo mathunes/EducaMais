@@ -10,6 +10,7 @@ import NotFound from '../../pages/NotFound';
 
 import './styles.css';
 import ResourceDetails from '../../pages/ResourceDetails';
+import EditResource from '../../pages/EditResource';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Route exact path={process.env.PUBLIC_URL + "/autores"} element={<Authors />} />
             <Route exact path={process.env.PUBLIC_URL + "/recursos"} element={<Resources />} />
             <Route exact path={process.env.PUBLIC_URL + "/recursos/detalhes"} element={<ResourceDetails />} />
-            <Route exact path={process.env.PUBLIC_URL + "/recursos/editar"} element={<ResourceDetails />} />
+            <Route exact path={process.env.PUBLIC_URL + "/recursos/editar"} element={<EditResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
             <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />
             <Route path="*" element={<NotFound />} />
