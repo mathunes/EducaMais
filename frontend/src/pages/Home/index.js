@@ -1,19 +1,18 @@
 import React from "react";
 
 import Sidebar from "../../components/Sidebar";
-import LastResources from "../../components/LastResources";
+import LastItems from "../../components/LastItems";
 
 import "./styles.css";
-import LastEvents from "../../components/LastEvents";
 
 function Home() {
     return(
         <div className="container-home">
             <Sidebar />
             <div>
-                <LastResources />
-                <LastEvents />
-                <LastEvents />
+                <LastItems entity="resource" />
+                <LastItems entity="event" />
+                <LastItems entity="course" />
             </div>
         </div>
     )

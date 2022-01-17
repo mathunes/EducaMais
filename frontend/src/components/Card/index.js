@@ -6,6 +6,7 @@ import RightArrow from "../../assets/images/right-arrow.png";
 import "./styles.css";
 
 function Card() {
+
     return (
         <div className="container-card">
             <img src={ImageDefault} />
