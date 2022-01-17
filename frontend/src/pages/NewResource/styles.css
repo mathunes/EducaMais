@@ -1,0 +1,54 @@
+.container-new-resource {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-new-resource .new-resource {
+    margin-left: 290px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.container-new-resource h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.container-new-resource .new-resource-content .new-resource-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+}
+
+.container-new-resource .new-resource-content .new-resource-form * {
+    margin: 10px 0
+}
+
+.container-new-resource .new-resource-content .new-resource-form input,
+.container-new-resource .new-resource-content .new-resource-form select {
+    padding: 12px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+.container-new-resource .new-resource-content .new-resource-form .btn-submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-new-resource .new-resource-content .new-resource-form input[type="file"] {
+    border: none;
+}
+
+.container-new-resource .new-resource-content .new-resource-form input[type="submit"] {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 120px;
+}
