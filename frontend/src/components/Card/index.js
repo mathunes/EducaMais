@@ -9,7 +9,7 @@ function Card() {
 
     return (
         <div className="container-card">
-            <img src={ImageDefault} />
+            <img src={ImageDefault} alt="representation" />
             <div className="information-card">
                 <p>Título</p>
                 <div>

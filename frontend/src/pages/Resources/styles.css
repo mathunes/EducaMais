@@ -1,0 +1,38 @@
+.container-resource {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-resource .resources a {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.container-resource .resources h1 {
+    font-size: 24px;
+    color: #333333;
+}
+
+.container-resource .resources a:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
+.container-resource .resources h1, .container-resource .resources a {
+    margin: 20px;
+}
+
+.container-resource .resources {
+    margin-left: 270px;
+}
+
+.container-resource .resources .resources-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
