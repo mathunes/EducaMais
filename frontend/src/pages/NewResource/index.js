@@ -16,9 +16,10 @@ function NewResource() {
     const [authors, setAuthors] = useState([]);
     const [authorsList, setAuthorsList] = useState([]);
     const [collection, setCollection] = useState("");
+    const [eventsList, setEventsList] = useState([]);
+    const [coursesList, setCoursesList] = useState([]);
 
     useEffect(() => {
-
         axios.get(`https://educa-mais.herokuapp.com/author`)
             .then((response) => {
                 setAuthorsList(response.data);
@@ -27,7 +28,22 @@ function NewResource() {
                 console.log(e.message)
             });
 
-    });
+        axios.get(`https://educa-mais.herokuapp.com/event`)
+            .then((response) => {
+                setEventsList(response.data);
+            })
+            .catch((e) => {
+                console.log(e.message);
+            });
+
+        axios.get(`https://educa-mais.herokuapp.com/course`)
+            .then((response) => {
+                setCoursesList(response.data);
+            })
+            .catch((e) => {
+                console.log(e.message);
+            });
+    }, []);
 
     const encodeImageFileAsURL = (e) => {
         var file = e.target.files[0];
@@ -112,7 +128,7 @@ function NewResource() {
                             {
                                 authorsList.map((data) => {
                                     return (
-                                        <option value={data.id}>{data.name}</option>
+                                        <option key={data.id} value={data.id}>{data.name}</option>
                                     )
                                 })
                             }
@@ -121,8 +137,20 @@ function NewResource() {
                         <label for="collection">Coleção</label>
                         <select id="collection" name="collection" onChange={(e) => setCollection(e.target.value)} >
                             <option value="">-</option>
-                            <option value="1">Coleção 1</option>
-                            <option value="2">Coleção 2</option>
+                            {
+                                eventsList.map((data) => {
+                                    return (
+                                        <option key={data.id} value={data.id}>{data.title}</option>
+                                    )
+                                })
+                            }
+                            {
+                                coursesList.map((data) => {
+                                    return (
+                                        <option key={data.id} value={data.id}>{data.title}</option>
+                                    )
+                                })
+                            }
                         </select>
 
                         <div className="btn-submit">
