@@ -10,6 +10,8 @@ function NewResource() {
     const [description, setDescription] = useState("");
     const [link, setLink] = useState("");
     const [image, setImage] = useState("");
+    const [createdAt, setCreatedAt] = useState("");
+    const [registeredAt, setRegisteredAt] = useState("");
     const [keywords, setKeywords] = useState([]);
     const [authors, setAuthors] = useState([]);
     const [collection, setCollection] = useState("");
@@ -18,7 +20,7 @@ function NewResource() {
         var file = e.target.files[0];
         var reader = new FileReader();
         reader.onloadend = () => {
-            setImage(reader.result);
+            setImage(reader.result.split(",")[1]);
         }
         reader.readAsDataURL(file);
     }
@@ -49,8 +51,8 @@ function NewResource() {
         axios.post(`https://educa-mais.herokuapp.com/resource`, {
             "title": title,
             "description": description,
-            "link": "resource.com",
-            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+            "link": link,
+            "image": image,
             "createdAt": "2021-12-21",
             "registeredAt": "2021-12-21",
             "keyWord": [
@@ -85,7 +87,13 @@ function NewResource() {
                         <label for="image">Imagem representativa</label>
                         <input id="image" type="file" name="image" onChange={encodeImageFileAsURL} />
 
-                        <label for="keywords">Palavras chave</label>
+                        <label for="createdAt">Data de criação</label>
+                        <input type="date" id="createdAt" name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} />
+
+                        <label for="registeredAt">Data de criação</label>
+                        <input type="date" id="registeredAt" name="registeredAt" onChange={(e) => setRegisteredAt(e.target.value)} />
+
+                        <label for="keywords">Palavras chave (separadas por vírgula)</label>
                         <input id="keywords" name="keywords" onChange={keyWordsStringToArray} />
 
                         <label for="authors">Autor(es)</label>
