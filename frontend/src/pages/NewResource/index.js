@@ -43,7 +43,7 @@ function NewResource() {
 
     const postData = (e) => {
 
-        console.log(authors);
+        console.log(collection);
 
         e.preventDefault();
 
@@ -77,9 +77,10 @@ function NewResource() {
                         </select>
 
                         <label for="collection">Coleção</label>
-                        <select id="collection" name="collection" >
-                            <option value="">Coleção 1</option>
-                            <option value="">Coleção 2</option>
+                        <select id="collection" name="collection" onChange={(e) => setCollection(e.target.value)} >
+                            <option value="">-</option>
+                            <option value="1">Coleção 1</option>
+                            <option value="2">Coleção 2</option>
                         </select>
 
                         <div className="btn-submit">
