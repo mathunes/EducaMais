@@ -67,11 +67,13 @@ function NewResource() {
     }
 
     const selectAuthors = (e) => {
-        const selectedAuthors = [...e.target.options]
-            .filter(x => x.selected)
-            .map(x => x.value);
+        let value = Array.from(e.target.selectedOptions, option => option.value);
 
-        setAuthors(selectedAuthors);
+        let arrayAuthors = value.map((authorId) => {
+            return {id: authorId}
+        })
+
+        setAuthors(arrayAuthors);
     }
 
     const postData = (e) => {
@@ -85,11 +87,7 @@ function NewResource() {
             "createdAt": createdAt,
             "registeredAt": registeredAt,
             "keyWord": keywords,
-            "authors": [
-                {
-                    "id": 1
-                }
-            ]
+            "authors": authors
         });
     }
 
