@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar";
+import axios from 'axios';
 
 import "./styles.css";
 
@@ -7,6 +8,7 @@ function NewResource() {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [link, setLink] = useState("");
     const [image, setImage] = useState("");
     const [keywords, setKeywords] = useState([]);
     const [authors, setAuthors] = useState([]);
@@ -42,11 +44,24 @@ function NewResource() {
     }
 
     const postData = (e) => {
-
-        console.log(collection);
-
         e.preventDefault();
 
+        axios.post(`https://educa-mais.herokuapp.com/resource`, {
+            "title": title,
+            "description": description,
+            "link": "resource.com",
+            "image": "R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+            "createdAt": "2021-12-21",
+            "registeredAt": "2021-12-21",
+            "keyWord": [
+                "keyword example"
+            ],
+            "authors": [
+                {
+                    "id": 1
+                }
+            ]
+        });
     }
 
     return (
@@ -63,6 +78,9 @@ function NewResource() {
                         
                         <label for="description">Descrição</label>
                         <input id="description" name="description" onChange={(e) => setDescription(e.target.value)} />
+
+                        <label for="link">Link</label>
+                        <input id="link" name="link" onChange={(e) => setLink(e.target.value)} />
 
                         <label for="image">Imagem representativa</label>
                         <input id="image" type="file" name="image" onChange={encodeImageFileAsURL} />
