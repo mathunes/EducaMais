@@ -9,7 +9,7 @@ function NewResource() {
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
     const [keywords, setKeywords] = useState([]);
-    const [author, setAuthors] = useState("");
+    const [authors, setAuthors] = useState([]);
     const [collection, setCollection] = useState("");
 
     const encodeImageFileAsURL = (e) => {
@@ -33,16 +33,20 @@ function NewResource() {
         setKeywords(keyWordsArrayFormatted);
     }
 
+    const selectAuthors = (e) => {
+        const selectedAuthors = [...e.target.options]
+            .filter(x => x.selected)
+            .map(x => x.value);
+
+        setAuthors(selectedAuthors);
+    }
+
     const postData = (e) => {
+
+        console.log(authors);
 
         e.preventDefault();
 
-        console.log(title);
-        console.log(description);
-        console.log(image);
-        console.log(keywords);
-        console.log(author);
-        console.log(collection);
     }
 
     return (
@@ -67,13 +71,13 @@ function NewResource() {
                         <input id="keywords" name="keywords" onChange={keyWordsStringToArray} />
 
                         <label for="authors">Autor(es)</label>
-                        <select id="authors" name="authors">
-                            <option value="">João Mendes</option>
-                            <option value="">João Mendes</option>
+                        <select id="collection" name="authors" multiple onChange={selectAuthors}>
+                            <option value="João">João Mendes</option>
+                            <option value="Maria">Maria Mendes</option>
                         </select>
 
                         <label for="collection">Coleção</label>
-                        <select id="collection" name="collection" onChange={(e) => setCollection(e.target.value)}>
+                        <select id="collection" name="collection" >
                             <option value="">Coleção 1</option>
                             <option value="">Coleção 2</option>
                         </select>
