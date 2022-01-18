@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import axios from 'axios';
 
@@ -14,7 +14,20 @@ function NewResource() {
     const [registeredAt, setRegisteredAt] = useState("");
     const [keywords, setKeywords] = useState([]);
     const [authors, setAuthors] = useState([]);
+    const [authorsList, setAuthorsList] = useState([]);
     const [collection, setCollection] = useState("");
+
+    useEffect(() => {
+
+        axios.get(`https://educa-mais.herokuapp.com/author`)
+            .then((response) => {
+                setAuthorsList(response.data);
+            })
+            .catch((e) => {
+                console.log(e.message)
+            });
+
+    });
 
     const encodeImageFileAsURL = (e) => {
         var file = e.target.files[0];
@@ -53,11 +66,9 @@ function NewResource() {
             "description": description,
             "link": link,
             "image": image,
-            "createdAt": "2021-12-21",
-            "registeredAt": "2021-12-21",
-            "keyWord": [
-                "keyword example"
-            ],
+            "createdAt": createdAt,
+            "registeredAt": registeredAt,
+            "keyWord": keywords,
             "authors": [
                 {
                     "id": 1
@@ -76,30 +87,35 @@ function NewResource() {
 
                     <form className="new-resource-form" onSubmit={postData}>
                         <label for="title">Título</label>
-                        <input id="title" name="title" onChange={(e) => setTitle(e.target.value)} />
+                        <input id="title" name="title" onChange={(e) => setTitle(e.target.value)} required/>
                         
                         <label for="description">Descrição</label>
-                        <input id="description" name="description" onChange={(e) => setDescription(e.target.value)} />
+                        <input id="description" name="description" onChange={(e) => setDescription(e.target.value)} required/>
 
                         <label for="link">Link</label>
-                        <input id="link" name="link" onChange={(e) => setLink(e.target.value)} />
+                        <input id="link" name="link" onChange={(e) => setLink(e.target.value)} required/>
 
                         <label for="image">Imagem representativa</label>
                         <input id="image" type="file" name="image" onChange={encodeImageFileAsURL} />
 
                         <label for="createdAt">Data de criação</label>
-                        <input type="date" id="createdAt" name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} />
+                        <input type="date" id="createdAt" name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} required/>
 
                         <label for="registeredAt">Data de criação</label>
-                        <input type="date" id="registeredAt" name="registeredAt" onChange={(e) => setRegisteredAt(e.target.value)} />
+                        <input type="date" id="registeredAt" name="registeredAt" onChange={(e) => setRegisteredAt(e.target.value)} required/>
 
                         <label for="keywords">Palavras chave (separadas por vírgula)</label>
-                        <input id="keywords" name="keywords" onChange={keyWordsStringToArray} />
+                        <input id="keywords" name="keywords" onChange={keyWordsStringToArray} required/>
 
                         <label for="authors">Autor(es)</label>
                         <select id="collection" name="authors" multiple onChange={selectAuthors}>
-                            <option value="João">João Mendes</option>
-                            <option value="Maria">Maria Mendes</option>
+                            {
+                                authorsList.map((data) => {
+                                    return (
+                                        <option value={data.id}>{data.name}</option>
+                                    )
+                                })
+                            }
                         </select>
 
                         <label for="collection">Coleção</label>
