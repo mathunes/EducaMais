@@ -37,7 +37,7 @@ function Resources() {
                                     image={data.image}
                                     editLink={`/recurso/editar/${data.id}`}
                                     deleteLink={`/recurso/delete/${data.id}`}
-                                    showLink={`/recurso/${data.id}`}
+                                    showLink={`/recurso/detalhes/${data.id}`}
                                 />
                             )
                         })

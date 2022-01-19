@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 
 import ImageDefault from "../../assets/images/image-default.png";
@@ -6,7 +6,18 @@ import Edit from "../../assets/images/edit.png";
 
 import "./styles.css";
 
-function ResourceDetails() {
+function ResourceDetails(props) {
+
+    const [idResource, setIdResource] = useState();
+
+    // useEffect(() => {
+    //     const result = new URLSearchParams(window.location.search)
+    //     console.log(result)
+    //     // setIdResource(props.match.params.id);
+
+    //     console.log(idResource);
+    // }, []);
+
     return (
         <div className="container-resource-details">
             <Sidebar />
