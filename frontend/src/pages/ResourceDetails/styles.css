@@ -50,7 +50,7 @@
     height: 18px;
 }
 
-.container-resource-details .resource-details .resource-details-content .resource-details-header div a {
+.container-resource-details .resource-details .resource-details-content .resource-details-header div .link-resource {
     background-color: #6391F4;
     color: #FFFFFF;
     text-decoration: none;
@@ -60,7 +60,7 @@
     margin-left: 20px;
 }
 
-.container-resource-details .resource-details .resource-details-content .resource-details-header div a:hover {
+.container-resource-details .resource-details .resource-details-content .resource-details-header div .link-resource:hover {
     cursor: pointer;
     background-color: #244791;
 }

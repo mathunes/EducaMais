@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import ImageDefault from "../../assets/images/image-default.png";
 import Edit from "../../assets/images/edit.png";
 
 import "./styles.css";
-import axios from "axios";
 
 function ResourceDetails(props) {
 
@@ -23,7 +24,6 @@ function ResourceDetails(props) {
                 setResource(response.data);
                 setResourceKeyWords(response.data.keyWord);
                 setResourceAuthors(response.data.authors);
-                console.log(response.data);
             });
 
     }, []);
@@ -35,7 +35,7 @@ function ResourceDetails(props) {
 
                 <h1>Detalhes recurso</h1>
                 
-                <img src={ImageDefault} alt="representation" />
+                <img src={resource.image ? `data:image/png;base64,${resource.image}` : ImageDefault} alt="representation" />
 
                 <div className="resource-details-content">
 
@@ -43,8 +43,10 @@ function ResourceDetails(props) {
                         <h2>{resource.title}</h2>
 
                         <div>
-                            <img src={Edit} alt="edit" />
-                            <a href={resource.link} target="_blank">Acessar recurso</a>
+                            <Link to={`/recurso/editar?id=${idResource}`}>
+                                <img src={Edit} alt="edit" />
+                            </Link>
+                            <a href={resource.link} className="link-resource" target="_blank">Acessar recurso</a>
                         </div>
                     </div>
 
