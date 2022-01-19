@@ -45,7 +45,7 @@ function NewResource() {
             });
     }, []);
 
-    const encodeImageFileAsURL = (e) => {
+    const handleEncodeImageFileAsURL = (e) => {
         var file = e.target.files[0];
         var reader = new FileReader();
         reader.onloadend = () => {
@@ -54,7 +54,7 @@ function NewResource() {
         reader.readAsDataURL(file);
     }
 
-    const keyWordsStringToArray = (e) => {
+    const handleKeyWordsStringToArray = (e) => {
         var keyWordsString = e.target.value;
 
         var keyWordsArray = keyWordsString.split(",");
@@ -66,7 +66,7 @@ function NewResource() {
         setKeywords(keyWordsArrayFormatted);
     }
 
-    const selectAuthors = (e) => {
+    const handleSelectAuthors = (e) => {
         let value = Array.from(e.target.selectedOptions, option => option.value);
 
         let arrayAuthors = value.map((authorId) => {
@@ -76,7 +76,51 @@ function NewResource() {
         setAuthors(arrayAuthors);
     }
 
-    const postData = (e) => {
+    const putCollection = (resourceId) => {
+        let [ collectionId, collectionType ] = collection.split("-");
+
+        switch (collectionType) {
+            case "event":
+                
+                axios.get(`https://educa-mais.herokuapp.com/event/${collectionId}`)
+                .then((response) => {
+
+                    let resourcesCollection = response.data.resources;
+
+                    resourcesCollection.push({id: resourceId});
+
+                    axios.put(`https://educa-mais.herokuapp.com/event`, {
+                        id: collectionId,
+                        resources: resourcesCollection
+                    });
+
+                });
+
+                break;
+        
+            case "course":
+                
+                axios.get(`https://educa-mais.herokuapp.com/course/${collectionId}`)
+                .then((response) => {
+
+                    let resourcesCollection = response.data.resources;
+
+                    resourcesCollection.push({id: resourceId});
+
+                    axios.put(`https://educa-mais.herokuapp.com/course`, {
+                        id: collectionId,
+                        resources: resourcesCollection
+                    });
+
+                });
+
+                break;
+            default:
+                break;
+        }
+    }
+
+    const postResource = (e) => {
         e.preventDefault();
 
         axios.post(`https://educa-mais.herokuapp.com/resource`, {
@@ -88,7 +132,10 @@ function NewResource() {
             "registeredAt": registeredAt,
             "keyWord": keywords,
             "authors": authors
-        });
+        }).then((response) => {
+            putCollection(response.data.id)
+        })
+
     }
 
     return (
@@ -99,7 +146,7 @@ function NewResource() {
 
                 <div className="new-resource-content">
 
-                    <form className="new-resource-form" onSubmit={postData}>
+                    <form className="new-resource-form" onSubmit={postResource}>
                         <label for="title">Título</label>
                         <input id="title" name="title" onChange={(e) => setTitle(e.target.value)} required/>
                         
@@ -110,19 +157,19 @@ function NewResource() {
                         <input id="link" name="link" onChange={(e) => setLink(e.target.value)} required/>
 
                         <label for="image">Imagem representativa</label>
-                        <input id="image" type="file" name="image" onChange={encodeImageFileAsURL} />
+                        <input id="image" type="file" name="image" onChange={handleEncodeImageFileAsURL} />
 
                         <label for="createdAt">Data de criação</label>
                         <input type="date" id="createdAt" name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} required/>
 
-                        <label for="registeredAt">Data de criação</label>
+                        <label for="registeredAt">Data de publicação</label>
                         <input type="date" id="registeredAt" name="registeredAt" onChange={(e) => setRegisteredAt(e.target.value)} required/>
 
                         <label for="keywords">Palavras chave (separadas por vírgula)</label>
-                        <input id="keywords" name="keywords" onChange={keyWordsStringToArray} required/>
+                        <input id="keywords" name="keywords" onChange={handleKeyWordsStringToArray} required/>
 
                         <label for="authors">Autor(es)</label>
-                        <select id="collection" name="authors" multiple onChange={selectAuthors}>
+                        <select id="authors" name="authors" multiple onChange={handleSelectAuthors}>
                             {
                                 authorsList.map((data) => {
                                     return (
@@ -138,14 +185,14 @@ function NewResource() {
                             {
                                 eventsList.map((data) => {
                                     return (
-                                        <option key={data.id} value={data.id}>{data.title}</option>
+                                        <option key={data.id} value={data.id+"-event"}>{data.title} (evento)</option>
                                     )
                                 })
                             }
                             {
                                 coursesList.map((data) => {
                                     return (
-                                        <option key={data.id} value={data.id}>{data.title}</option>
+                                        <option key={data.id} value={data.id+"-course"}>{data.title} (curso)</option>
                                     )
                                 })
                             }
