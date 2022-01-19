@@ -34,11 +34,22 @@
     justify-content: space-between;
 }
 
-.container-card .information-card .options img {
+.container-card .information-card .options a {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.container-card .information-card .options a:hover {
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+.container-card .information-card .options a img {
     width: 14px;
     height: 14px;
 }
 
-.container-card .information-card .options div img {
+.container-card .information-card .options div a img {
     margin-right: 10px;
 }

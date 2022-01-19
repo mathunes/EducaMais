@@ -6,20 +6,27 @@ import Delete from "../../assets/images/delete.png";
 import Edit from "../../assets/images/edit.png";
 
 import "./styles.css";
+import { Link } from "react-router-dom";
 
-function Card() {
+function Card(props) {
 
     return (
         <div className="container-card">
-            <img src={ImageDefault} alt="representation" />
+            <img src={props.image ? `data:image/png;base64,${props.image}` : ImageDefault} alt="representation" />
             <div className="information-card">
-                <p>Título</p>
+                <p>{props.title}</p>
                 <div className="options">
                     <div>
-                        <img src={Edit} alt="edit"/>
-                        <img src={Delete} alt="delete"/>
+                        <Link to={props.editLink}>
+                            <img src={Edit} alt="edit"/>
+                        </Link>
+                        <Link to={props.deleteLink}>
+                            <img src={Delete} alt="delete"/>
+                        </Link>
                     </div>
-                    <img src={RightArrow} alt="view"/>
+                    <Link to={props.showLink}>
+                        <img src={RightArrow} alt="view"/>
+                    </Link>
                 </div>
             </div>
         </div>
