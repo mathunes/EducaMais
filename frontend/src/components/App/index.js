@@ -21,8 +21,8 @@ function App() {
             <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
             <Route exact path={process.env.PUBLIC_URL + "/autores"} element={<Authors />} />
             <Route exact path={process.env.PUBLIC_URL + "/recursos"} element={<Resources />} />
-            {/* <Route exact path={process.env.PUBLIC_URL + "/recurso/detalhes/:id"} element={<ResourceDetails />} />
-            <Route exact path={process.env.PUBLIC_URL + "/recurso/editar/:id"} element={<EditResource />} /> */}
+            <Route exact path={process.env.PUBLIC_URL + "/recurso/detalhes"} element={<ResourceDetails />} />
+            <Route exact path={process.env.PUBLIC_URL + "/recurso/editar"} element={<EditResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/recurso/adicionar"} element={<NewResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
             <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />

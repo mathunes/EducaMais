@@ -5,18 +5,28 @@ import ImageDefault from "../../assets/images/image-default.png";
 import Edit from "../../assets/images/edit.png";
 
 import "./styles.css";
+import axios from "axios";
 
 function ResourceDetails(props) {
 
-    const [idResource, setIdResource] = useState();
+    const [idResource, setIdResource] = useState(0);
+    const [resource, setResource] = useState({});
+    const [resourceKeyWords, setResourceKeyWords] = useState([]);
+    const [resourceAuthors, setResourceAuthors] = useState([]);
 
-    // useEffect(() => {
-    //     const result = new URLSearchParams(window.location.search)
-    //     console.log(result)
-    //     // setIdResource(props.match.params.id);
+    useEffect(() => {
+        
+        setIdResource(new URLSearchParams(window.location.search).get("id"));
 
-    //     console.log(idResource);
-    // }, []);
+        axios.get(`https://educa-mais.herokuapp.com/resource/${new URLSearchParams(window.location.search).get("id")}`)
+            .then((response) => {
+                setResource(response.data);
+                setResourceKeyWords(response.data.keyWord);
+                setResourceAuthors(response.data.authors);
+                console.log(response.data);
+            });
+
+    }, []);
 
     return (
         <div className="container-resource-details">
@@ -30,20 +40,25 @@ function ResourceDetails(props) {
                 <div className="resource-details-content">
 
                     <div className="resource-details-header">
-                        <h2>Título</h2>
+                        <h2>{resource.title}</h2>
 
                         <div>
                             <img src={Edit} alt="edit" />
-                            <a href="#">Acessar recurso</a>
+                            <a href={resource.link} target="_blank">Acessar recurso</a>
                         </div>
                     </div>
 
                     <div className="resource-details-keywords">
-                        <p>Palavra 1</p>
-                        <p>Palavra 2</p>
+                        {
+                            resourceKeyWords.map((word) => {
+                                return (
+                                    <p key={word}>{word}</p>
+                                )
+                            })
+                        }
                     </div>
 
-                    <p className="resource-description">Descrição lorem ipsum</p>
+                    <p className="resource-description">{resource.description}</p>
 
                     <h2 className="authors">Autores</h2>
 
@@ -55,20 +70,26 @@ function ResourceDetails(props) {
                             <th>Afiliação</th>
                             <th>Orcid</th>
                         </tr>
-                        <tr>
-                            <td>João</td>
-                            <td>Mendes</td>
-                            <td>joao@email.com</td>
-                            <td>afiliação</td>
-                            <td>123456</td>
-                        </tr>
+                        {
+                            resourceAuthors.map((author) => {
+                                return (
+                                    <tr>
+                                        <td>{author.name}</td>
+                                        <td>{author.lastName}</td>
+                                        <td>{author.email}</td>
+                                        <td>{author.affiliation}</td>
+                                        <td>{author.orcid}</td>
+                                    </tr>
+                                )
+                            })
+                        }
                     </table>
-                    
+{/*                     
                     <h2 className="collection">Coleção</h2>
 
-                    <p>Nome da coleção</p>
+                    <p>Nome da coleção</p> */}
 
-                    <p className="dates">Criado em 12/12/2021 - Registrado em 12/12/2021</p>
+                    <p className="dates">Criado em {resource.createdAt} - Registrado em {resource.registeredAt}</p>
 
                 </div>
             </div>
