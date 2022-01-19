@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 
 import Sidebar from "../../components/Sidebar";
@@ -11,7 +12,7 @@ function Resources() {
             <Sidebar />
             <div className="resources">
                 <h1>Recursos</h1>
-                <a href="#">Novo recurso</a>
+                <Link to="/recursos/adicionar">Novo recurso</Link>
                 <div className="resources-list">
                     <Card />
                     <Card />
