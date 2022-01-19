@@ -26,7 +26,7 @@ function Resources() {
             <Sidebar />
             <div className="resources">
                 <h1>Recursos</h1>
-                <Link to="/recursos/adicionar">Novo recurso</Link>
+                <Link to="/recurso/adicionar">Novo recurso</Link>
                 <div className="resources-list">
                     {
                         resources.map((data) => {

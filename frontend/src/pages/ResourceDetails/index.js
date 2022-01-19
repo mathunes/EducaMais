@@ -46,7 +46,7 @@ function ResourceDetails(props) {
                             <Link to={`/recurso/editar?id=${idResource}`}>
                                 <img src={Edit} alt="edit" />
                             </Link>
-                            <a href={resource.link} className="link-resource" target="_blank">Acessar recurso</a>
+                            <a href={resource.link} rel="noopener noreferrer" className="link-resource" target="_blank">Acessar recurso</a>
                         </div>
                     </div>
 

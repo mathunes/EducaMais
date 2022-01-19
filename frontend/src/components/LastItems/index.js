@@ -18,8 +18,6 @@ function LastItems(props) {
                     .then((response) => {
                         let arrayLength = response.data.length;
 
-                        console.log(arrayLength);
-
                         if (arrayLength > 3) {
 
                             setLastItems(response.data.slice((arrayLength - 3), arrayLength));
@@ -77,13 +75,14 @@ function LastItems(props) {
 
 
     return (
-        <div class="container-cards">
+        <div className="container-cards">
             <h2>Últimos {entity}</h2>
             <div className="cards">
                 {
                     lastItems.map((data) => {
                         return (
                             <Card 
+                                key={data.id}
                                 title={data.title}
                                 image={data.image}
                                 editLink={`/${entity.slice(0, -1)}/editar?id=${data.id}`}
