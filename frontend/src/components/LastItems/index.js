@@ -86,9 +86,9 @@ function LastItems(props) {
                             <Card 
                                 title={data.title}
                                 image={data.image}
-                                editLink=""
-                                deleteLink=""
-                                showLink=""
+                                editLink={`/${entity.slice(0, -1)}/editar?id=${data.id}`}
+                                deleteLink={`/${entity.slice(0, -1)}/excluir?id=${data.id}`}
+                                showLink={`/${entity.slice(0, -1)}/detalhes?id=${data.id}`}
                             />
                         )
                     })
