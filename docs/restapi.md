@@ -654,7 +654,7 @@ Update a course.
 
 Put example to update courses attributes:
 
-	{
+    {
         "id": 8,
         "title": "New course title",
         "description": "New course description",
