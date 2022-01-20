@@ -22,6 +22,7 @@ function EditResource() {
     const [coursesList, setCoursesList] = useState([]);
     const [idResource, setIdResource] = useState(0);
     const [resourceAuthors, setResourceAuthors] = useState([]);
+    const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
         axios.get(`https://educa-mais.herokuapp.com/author`)
@@ -163,8 +164,14 @@ function EditResource() {
             "authors": authors
         }).then((response) => {
             putCollection(response.data.id);
+
+            setRedirect(true);
         });
 
+    }
+
+    if (redirect) {
+        return <Navigate to={`/recurso/detalhes?id=${idResource}`} />
     }
 
     return (
