@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 
 function Card(props) {
 
+    const handleShowModalDelete = () => {
+        // confirm("teste")
+    }
+
     return (
         <div className="container-card">
             <img src={props.image ? `data:image/png;base64,${props.image}` : ImageDefault} alt="representation" />
@@ -20,8 +24,8 @@ function Card(props) {
                         <Link to={props.editLink}>
                             <img src={Edit} alt="edit"/>
                         </Link>
-                        <Link to={props.deleteLink}>
-                            <img src={Delete} alt="delete"/>
+                        <Link to="#">
+                            <img src={Delete} alt="delete" onClick={handleShowModalDelete}/>
                         </Link>
                     </div>
                     <Link to={props.showLink}>

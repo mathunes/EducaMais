@@ -51,6 +51,7 @@ function Resources() {
                                         editLink={`/recurso/editar?id=${data.id}`}
                                         deleteLink={`/recurso/excluir?id=${data.id}`}
                                         showLink={`/recurso/detalhes?id=${data.id}`}
+                                        entity="recurso"
                                     />
                                 )
                             })
