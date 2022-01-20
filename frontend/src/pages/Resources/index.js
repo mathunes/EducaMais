@@ -46,6 +46,7 @@ function Resources() {
                                 return (
                                     <Card 
                                         key={data.id} 
+                                        id={data.id}
                                         title={data.title}
                                         image={data.image}
                                         editLink={`/recurso/editar?id=${data.id}`}

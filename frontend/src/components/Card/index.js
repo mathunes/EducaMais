@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { confirmAlert } from 'react-confirm-alert';
+import axios from "axios";
 
 import ImageDefault from "../../assets/images/image-default.png";
 import RightArrow from "../../assets/images/right-arrow.png";
@@ -11,8 +12,9 @@ import { Link } from "react-router-dom";
 
 function Card(props) {
 
-    const handleShowModalDelete = () => {
+    const [teste, setTeste] = useState("")
 
+    const handleShowModalDelete = () => {
 
         confirmAlert({
             title: "Excluir",
@@ -20,18 +22,23 @@ function Card(props) {
             buttons: [
                 {
                     label: "Sim",
-                    onClick: () => alert("SIMMM")
+                    onClick: () => {
+                        axios.delete(`https://educa-mais.herokuapp.com/resource/${props.id}`)
+                        .then((response) => {
+                            setTeste("none")
+                        })
+                    }
                 },
                 {
                     label: "Não",
-                    onClick: () => alert("NAOOO")
+                    onClick: () => {}
                 }
             ]
         });
     }
 
     return (
-        <div className="container-card">
+        <div className="container-card" style={{display: teste}}>
             <img src={props.image ? `data:image/png;base64,${props.image}` : ImageDefault} alt="representation" />
             <div className="information-card">
                 <p>{props.title}</p>
