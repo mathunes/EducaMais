@@ -66,7 +66,6 @@ function Resources() {
         <div className="container-resource">
             <Sidebar />
             {content}
-            
         </div>
     )
 }
