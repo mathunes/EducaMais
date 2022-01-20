@@ -1,3 +1,13 @@
+.loading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 270px;
+    font-weight: bolder;
+}
+
 .container-resource {
     display: flex;
     flex-direction: row;

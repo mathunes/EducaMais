@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navigate } from 'react-router-dom';
 import axios from "axios";
 
 import Sidebar from "../../components/Sidebar";
@@ -20,8 +21,6 @@ function EditResource() {
     const [eventsList, setEventsList] = useState([]);
     const [coursesList, setCoursesList] = useState([]);
     const [idResource, setIdResource] = useState(0);
-    // const [resource, setResource] = useState({});
-    // const [resourceKeyWords, setResourceKeyWords] = useState([]);
     const [resourceAuthors, setResourceAuthors] = useState([]);
 
     useEffect(() => {
@@ -53,8 +52,6 @@ function EditResource() {
 
         axios.get(`https://educa-mais.herokuapp.com/resource/${new URLSearchParams(window.location.search).get("id")}`)
             .then((response) => {
-                // setResource(response.data);
-                // setResourceKeyWords(response.data.keyWord.join(", "));
 
                 let authorIdsTemp = [];
 
@@ -165,8 +162,8 @@ function EditResource() {
             "keyWord": keywords,
             "authors": authors
         }).then((response) => {
-            putCollection(response.data.id)
-        })
+            putCollection(response.data.id);
+        });
 
     }
 
