@@ -185,8 +185,8 @@ function EditResource() {
                         <label for="link">Link</label>
                         <input id="link" name="link" value={link} onChange={(e) => setLink(e.target.value)} required/>
 
-                        <label for="image">Imagem representativa</label>
-                        <input id="image" type="file" name="image" onChange={handleEncodeImageFileAsURL} />
+                        <label for="image">Imagem representativa (PNG)</label>
+                        <input id="image" type="file" name="image" accept="image/png" onChange={handleEncodeImageFileAsURL} />
 
                         <label for="createdAt">Data de criação</label>
                         <input type="date" id="createdAt" value={createdAt} name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} required/>
