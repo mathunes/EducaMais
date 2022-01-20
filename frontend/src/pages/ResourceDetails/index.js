@@ -75,7 +75,7 @@ function ResourceDetails(props) {
                         {
                             resourceAuthors.map((author) => {
                                 return (
-                                    <tr>
+                                    <tr key={author.id}>
                                         <td>{author.name}</td>
                                         <td>{author.lastName}</td>
                                         <td>{author.email}</td>
