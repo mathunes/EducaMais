@@ -39,6 +39,11 @@
     justify-content: flex-end;
 }
 
+.container-new-resource .new-resource-content .new-resource-form .btn-submit input:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
 .container-new-resource .new-resource-content .new-resource-form input[type="file"] {
     border: none;
 }

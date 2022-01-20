@@ -171,14 +171,14 @@ function EditResource() {
     }
 
     return (
-        <div className="container-new-resource">
+        <div className="container-edit-resource">
             <Sidebar />
-            <div className="new-resource">
+            <div className="edit-resource">
                 <h1>Adicionar recurso</h1>
 
-                <div className="new-resource-content">
+                <div className="edit-resource-content">
 
-                    <form className="new-resource-form" onSubmit={putResource}>
+                    <form className="edit-resource-form" onSubmit={putResource}>
                         <label for="title">Título</label>
                         <input id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
                         
