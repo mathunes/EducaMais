@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import axios from 'axios';
 
@@ -18,6 +19,8 @@ function NewResource() {
     const [collection, setCollection] = useState("");
     const [eventsList, setEventsList] = useState([]);
     const [coursesList, setCoursesList] = useState([]);
+    const [idResource, setIdResource] = useState(0);
+    const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
         axios.get(`https://educa-mais.herokuapp.com/author`)
@@ -133,9 +136,17 @@ function NewResource() {
             "keyWord": keywords,
             "authors": authors
         }).then((response) => {
-            putCollection(response.data.id)
+            putCollection(response.data.id);
+
+            setIdResource(response.data.id);
+
+            setRedirect(true);
         })
 
+    }
+
+    if (redirect) {
+        return <Navigate to={`/recurso/detalhes?id=${idResource}`} />
     }
 
     return (
