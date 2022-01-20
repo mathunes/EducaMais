@@ -1,3 +1,53 @@
+#react-confirm-alert {
+    background-color: rgba(3, 3, 3, 0.5);
+    height: 100%;
+    width: 100vw;
+    position: fixed; 
+    top: 0;
+    left: -17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#react-confirm-alert .react-confirm-alert-body {
+    background-color: #FFFFFF;
+    width: 320px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#react-confirm-alert .react-confirm-alert-body h1 {
+    font-size: 20px;
+}
+
+#react-confirm-alert .react-confirm-alert-body .react-confirm-alert-button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#react-confirm-alert .react-confirm-alert-body .react-confirm-alert-button-group button {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+}
+
+#react-confirm-alert .react-confirm-alert-body .react-confirm-alert-button-group button:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
 .container-card {
     display: flex;
     flex-direction: row;

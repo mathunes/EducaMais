@@ -1,4 +1,5 @@
 import React from "react";
+import { confirmAlert } from 'react-confirm-alert';
 
 import ImageDefault from "../../assets/images/image-default.png";
 import RightArrow from "../../assets/images/right-arrow.png";
@@ -11,7 +12,22 @@ import { Link } from "react-router-dom";
 function Card(props) {
 
     const handleShowModalDelete = () => {
-        // confirm("teste")
+
+
+        confirmAlert({
+            title: "Excluir",
+            message: `Deseja excluir o ${props.entity} ${props.title}?`,
+            buttons: [
+                {
+                    label: "Sim",
+                    onClick: () => alert("SIMMM")
+                },
+                {
+                    label: "Não",
+                    onClick: () => alert("NAOOO")
+                }
+            ]
+        });
     }
 
     return (
@@ -24,8 +40,8 @@ function Card(props) {
                         <Link to={props.editLink}>
                             <img src={Edit} alt="edit"/>
                         </Link>
-                        <Link to="#">
-                            <img src={Delete} alt="delete" onClick={handleShowModalDelete}/>
+                        <Link to="#" onClick={handleShowModalDelete}>
+                            <img src={Delete} alt="delete"/>
                         </Link>
                     </div>
                     <Link to={props.showLink}>
