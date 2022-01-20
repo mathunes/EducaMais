@@ -37,6 +37,20 @@ function Card(props) {
         });
     }
 
+    let options;
+
+    if (props.showOptions) {
+        options = 
+            <>
+                <Link to={props.editLink}>
+                    <img src={Edit} alt="edit"/>
+                </Link>
+                <Link to="#" onClick={handleShowModalDelete}>
+                    <img src={Delete} alt="delete"/>
+                </Link>
+            </>
+    }
+
     return (
         <div className="container-card" style={{display: teste}}>
             <img src={props.image ? `data:image/png;base64,${props.image}` : ImageDefault} alt="representation" />
@@ -44,12 +58,9 @@ function Card(props) {
                 <p>{props.title}</p>
                 <div className="options">
                     <div>
-                        <Link to={props.editLink}>
-                            <img src={Edit} alt="edit"/>
-                        </Link>
-                        <Link to="#" onClick={handleShowModalDelete}>
-                            <img src={Delete} alt="delete"/>
-                        </Link>
+                        {
+                            options
+                        }
                     </div>
                     <Link to={props.showLink}>
                         <img src={RightArrow} alt="view"/>

@@ -85,6 +85,7 @@ function LastItems(props) {
                                 key={data.id}
                                 title={data.title}
                                 image={data.image}
+                                showOptions={false}
                                 editLink={`/${entity.slice(0, -1)}/editar?id=${data.id}`}
                                 deleteLink={`/${entity.slice(0, -1)}/excluir?id=${data.id}`}
                                 showLink={`/${entity.slice(0, -1)}/detalhes?id=${data.id}`}

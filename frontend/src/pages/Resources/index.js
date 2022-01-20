@@ -49,6 +49,7 @@ function Resources() {
                                         id={data.id}
                                         title={data.title}
                                         image={data.image}
+                                        showOptions={true}
                                         editLink={`/recurso/editar?id=${data.id}`}
                                         deleteLink={`/recurso/excluir?id=${data.id}`}
                                         showLink={`/recurso/detalhes?id=${data.id}`}
