@@ -1,0 +1,58 @@
+.container-new-course {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-new-course .new-course {
+    margin-left: 290px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.container-new-course h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.container-new-course .new-course-content .new-course-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+}
+
+.container-new-course .new-course-content .new-course-form * {
+    margin: 10px 0
+}
+
+.container-new-course .new-course-content .new-course-form input {
+    padding: 12px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+.container-new-course .new-course-content .new-course-form .btn-submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-new-course .new-course-content .new-course-form .btn-submit input:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
+.container-new-course .new-course-content .new-course-form input[type="file"] {
+    border: none;
+}
+
+.container-new-course .new-course-content .new-course-form input[type="submit"] {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 120px;
+}

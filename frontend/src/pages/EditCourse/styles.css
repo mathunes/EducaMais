@@ -1,0 +1,58 @@
+.container-edit-course {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-edit-course .edit-course {
+    margin-left: 290px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.container-edit-course h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.container-edit-course .edit-course-content .edit-course-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+}
+
+.container-edit-course .edit-course-content .edit-course-form * {
+    margin: 10px 0
+}
+
+.container-edit-course .edit-course-content .edit-course-form input {
+    padding: 12px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+.container-edit-course .edit-course-content .edit-course-form .btn-submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-edit-course .edit-course-content .edit-course-form .btn-submit input:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
+.container-edit-course .edit-course-content .edit-course-form input[type="file"] {
+    border: none;
+}
+
+.container-edit-course .edit-course-content .edit-course-form input[type="submit"] {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 120px;
+}
