@@ -10,6 +10,7 @@ import NotFound from '../../pages/NotFound';
 import ResourceDetails from '../../pages/ResourceDetails';
 import EditResource from '../../pages/EditResource';
 import NewResource from '../../pages/NewResource';
+import NewAuthor from '../../pages/NewAuthor';
 
 import './styles.css';
 
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
             <Route exact path={process.env.PUBLIC_URL + "/autores"} element={<Authors />} />
+            <Route exact path={process.env.PUBLIC_URL + "/autor/adicionar"} element={<NewAuthor />} />
             <Route exact path={process.env.PUBLIC_URL + "/recursos"} element={<Resources />} />
             <Route exact path={process.env.PUBLIC_URL + "/recurso/detalhes"} element={<ResourceDetails />} />
             <Route exact path={process.env.PUBLIC_URL + "/recurso/editar"} element={<EditResource />} />
