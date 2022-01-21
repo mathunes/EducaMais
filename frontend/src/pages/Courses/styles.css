@@ -1,0 +1,48 @@
+.loading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 270px;
+    font-weight: bolder;
+}
+
+.container-course {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-course .courses a {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.container-course .courses h1 {
+    font-size: 24px;
+    color: #333333;
+}
+
+.container-course .courses a:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
+.container-course .courses h1, .container-course .courses a {
+    margin: 20px;
+}
+
+.container-course .courses {
+    margin-left: 270px;
+}
+
+.container-course .courses .courses-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
