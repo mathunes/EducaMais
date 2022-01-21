@@ -61,8 +61,7 @@ function AuthorDetails(props) {
                         <tr>
                             <th>Título</th>
                             <th>Descrição</th>
-                            <th>Data de criação</th>
-                            <th>Data de registro</th>
+                            <th>Recurso</th>
                         </tr>
                         {
                             authorResources.map((resource) => {
@@ -70,8 +69,7 @@ function AuthorDetails(props) {
                                     <tr key={resource.id}>
                                         <td>{resource.title}</td>
                                         <td>{resource.description}</td>
-                                        <td>{resource.createdAt}</td>
-                                        <td>{resource.registeredAt}</td>
+                                        <td><Link to={`/recurso/detalhes?id=${resource.id}`}>Ver mais</Link></td>
                                     </tr>
                                 )
                             })

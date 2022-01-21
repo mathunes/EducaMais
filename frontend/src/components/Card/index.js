@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { confirmAlert } from 'react-confirm-alert';
 import axios from "axios";
 
@@ -12,7 +12,21 @@ import { Link } from "react-router-dom";
 
 function Card(props) {
 
-    const [teste, setTeste] = useState("")
+    const [teste, setTeste] = useState("");
+    const [entity, setEntity] = useState("");
+
+    useEffect(() => {
+        switch (props.entity) {
+            case "recurso":
+                setEntity("resource");
+                break;
+            case "autor":
+                setEntity("author");
+                    break;
+            default:
+                break;
+        }
+    })
 
     const handleShowModalDelete = () => {
 
@@ -23,7 +37,7 @@ function Card(props) {
                 {
                     label: "Sim",
                     onClick: () => {
-                        axios.delete(`https://educa-mais.herokuapp.com/resource/${props.id}`)
+                        axios.delete(`https://educa-mais.herokuapp.com/${entity}/${props.id}`)
                         .then((response) => {
                             setTeste("none")
                         })
