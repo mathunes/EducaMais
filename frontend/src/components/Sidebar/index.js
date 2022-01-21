@@ -12,37 +12,39 @@ function Sidebar(props) {
   
     const handleModalClose = () => setDisplayModal("none");
     const handleModalShow = () => setDisplayModal("flex");
-  
+
+   
     return (
         <>
-            <img src={Menu} alt='menu' id="menu" />
+            {/* <img src={Menu} alt='menu' id="menu" onClick={handleShowSidebar} />
+            <div className='shadow-sidebar'></div> */}
             <nav className='container'>
                 <div>
-                        <Link to="/">
-                            <img src={Logo} alt='logo'/>
-                        </Link>
-                        <ul>
-                            <li>
-                                <Link to="/autores">
-                                    Autores
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/recursos">
-                                    Recursos
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/eventos">
-                                    Eventos
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/cursos">
-                                    Cursos
-                                </Link>
-                            </li>
-                        </ul>
+                    <Link to="/">
+                        <img src={Logo} alt='logo' />
+                    </Link>
+                    <ul>
+                        <li>
+                            <Link to="/autores">
+                                Autores
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/recursos">
+                                Recursos
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/eventos">
+                                Eventos
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/cursos">
+                                Cursos
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
                 <div>
                     <p className='btn-show-modal' onClick={handleModalShow}>Sobre</p>

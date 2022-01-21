@@ -22,6 +22,6 @@
 @media (max-width: 750px) {
     .container-cards {
         margin-left: 0;
-        margin-top: 40px;
+        /* margin-top: 40px; */
     }
 }
