@@ -11,10 +11,16 @@ import ResourceDetails from '../../pages/ResourceDetails';
 import EditResource from '../../pages/EditResource';
 import NewResource from '../../pages/NewResource';
 import NewAuthor from '../../pages/NewAuthor';
+import EditAuthor from '../../pages/EditAuthor';
+import CourseDetails from '../../pages/CourseDetails';
+import AuthorDetails from '../../pages/AuthorDetails';
+import NewCourse from '../../pages/NewCourse';
+import EditCourse from '../../pages/EditCourse';
 
 import './styles.css';
-import EditAuthor from '../../pages/EditAuthor';
-import AuthorDetails from '../../pages/AuthorDetails';
+import NewEvent from '../../pages/NewEvent';
+import EditEvent from '../../pages/EditEvent';
+import EventDetails from '../../pages/EventDetails';
 
 function App() {
   return (
@@ -31,7 +37,13 @@ function App() {
             <Route exact path={process.env.PUBLIC_URL + "/recurso/editar"} element={<EditResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/recurso/adicionar"} element={<NewResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
+            <Route exact path={process.env.PUBLIC_URL + "/evento/detalhes"} element={<EventDetails />} />
+            <Route exact path={process.env.PUBLIC_URL + "/evento/editar"} element={<EditEvent />} />
+            <Route exact path={process.env.PUBLIC_URL + "/evento/adicionar"} element={<NewEvent />} />
             <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />
+            <Route exact path={process.env.PUBLIC_URL + "/curso/detalhes"} element={<CourseDetails />} />
+            <Route exact path={process.env.PUBLIC_URL + "/curso/editar"} element={<EditCourse />} />
+            <Route exact path={process.env.PUBLIC_URL + "/curso/adicionar"} element={<NewCourse />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

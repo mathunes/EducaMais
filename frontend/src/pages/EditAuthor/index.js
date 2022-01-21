@@ -55,7 +55,7 @@ function EditAuthor() {
         <div className="container-edit-author">
             <Sidebar />
             <div className="edit-author">
-                <h1>Adicionar recurso</h1>
+                <h1>Editar autor</h1>
 
                 <div className="edit-author-content">
 
