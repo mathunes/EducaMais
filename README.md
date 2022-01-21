@@ -30,3 +30,4 @@ The following technologies were used in the construction of the project:
 - [CSS](https://www.w3schools.com/css/)
 - [ReactJS](https://pt-br.reactjs.org/)
 - [Axios](https://axios-http.com/)
+- [GitHub Pages](https://pages.github.com/)
