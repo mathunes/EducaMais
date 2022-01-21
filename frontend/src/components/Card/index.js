@@ -26,6 +26,9 @@ function Card(props) {
             case "curso":
                 setEntity("course");
                     break;
+            case "evento":
+                setEntity("event");
+                    break;
             default:
                 break;
         }
