@@ -14,6 +14,7 @@ import NewAuthor from '../../pages/NewAuthor';
 
 import './styles.css';
 import EditAuthor from '../../pages/EditAuthor';
+import AuthorDetails from '../../pages/AuthorDetails';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
             <Route exact path={process.env.PUBLIC_URL + "/autores"} element={<Authors />} />
             <Route exact path={process.env.PUBLIC_URL + "/autor/editar"} element={<EditAuthor />} />
+            <Route exact path={process.env.PUBLIC_URL + "/autor/detalhes"} element={<AuthorDetails />} />
             <Route exact path={process.env.PUBLIC_URL + "/autor/adicionar"} element={<NewAuthor />} />
             <Route exact path={process.env.PUBLIC_URL + "/recursos"} element={<Resources />} />
             <Route exact path={process.env.PUBLIC_URL + "/recurso/detalhes"} element={<ResourceDetails />} />

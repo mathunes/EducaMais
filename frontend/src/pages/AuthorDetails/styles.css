@@ -1,0 +1,84 @@
+.container-author-details {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-author-details .author-details {
+    margin-left: 290px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.container-author-details .author-details h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.container-author-details .author-details img {
+    width: 100%;
+    height: 242px;
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+}
+
+.container-author-details .author-details .author-details-content {
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.container-author-details .author-details .author-details-content .author-details-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-author-details .author-details .author-details-content .author-details-header h2 {
+    font-size: 18px;
+}
+
+.container-author-details .author-details .author-details-content .author-details-header div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-author-details .author-details .author-details-content .author-details-header div img {
+    width: 18px;
+    height: 18px;
+}
+
+.container-author-details .author-details .author-details-content .author-details-header div .link-author {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.container-author-details .author-details .author-details-content .author-details-header div .link-author:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
+.container-author-details .author-details .author-details-content .author-description {
+    margin-top: 20px;
+}
+
+.container-author-details .author-details .author-details-content .resources {
+    font-size: 17px;
+    margin: 20px 0;
+}
+
+.container-author-details .author-details .author-details-content table {
+    width: 100%;
+}
+
+.container-author-details .author-details .author-details-content table tr th,
+.container-author-details .author-details .author-details-content table tr td {
+    padding-bottom: 20px;
+}

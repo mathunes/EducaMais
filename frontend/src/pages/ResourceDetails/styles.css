@@ -92,6 +92,11 @@
     width: 100%;
 }
 
+.container-resource-details .resource-details .resource-details-content table tr th,
+.container-resource-details .resource-details .resource-details-content table tr td {
+    padding-bottom: 20px;
+}
+
 .container-resource-details .resource-details .resource-details-content .dates {
     font-size: 12px;
     margin: 20px 0;
