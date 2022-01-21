@@ -8,15 +8,14 @@ import { Link } from 'react-router-dom';
 
 function Sidebar(props) {
 
-    const [display, setDisplay] = useState("none");
+    const [displayModal, setDisplayModal] = useState("none");
   
-    const handleClose = () => setDisplay("none");
-    const handleShow = () => setDisplay("flex");
+    const handleModalClose = () => setDisplayModal("none");
+    const handleModalShow = () => setDisplayModal("flex");
   
-
     return (
         <>
-            {/* <img src={Menu} alt='menu' id="menu" /> */}
+            <img src={Menu} alt='menu' id="menu" />
             <nav className='container'>
                 <div>
                         <Link to="/">
@@ -46,11 +45,11 @@ function Sidebar(props) {
                         </ul>
                 </div>
                 <div>
-                    <p className='btn-show-modal' onClick={handleShow}>Sobre</p>
+                    <p className='btn-show-modal' onClick={handleModalShow}>Sobre</p>
                 </div>
             </nav>
 
-            <div className='modal-container' style={{display}} onClick={handleClose}>
+            <div className='modal-container' style={{display: displayModal}} onClick={handleModalClose}>
                 <div className='modal'>
                     <div className='modal-header'>
                         <h2 className='modal-title'>Sobre</h2>

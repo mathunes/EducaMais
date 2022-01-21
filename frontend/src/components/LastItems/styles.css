@@ -2,6 +2,7 @@
     padding: 20px;
     text-align: left;
     margin-left: 250px;
+    transition: all .5s;
 }
 
 .container-cards h2 {
@@ -16,4 +17,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+@media (max-width: 750px) {
+    .container-cards {
+        margin-left: 0;
+        margin-top: 40px;
+    }
 }
