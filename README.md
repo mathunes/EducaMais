@@ -22,3 +22,5 @@ The following technologies were used in the construction of the project:
 - [Java](https://www.java.com/pt-BR/)
 - [Spring](https://spring.io/)
 - [Heroku](https://www.heroku.com/)
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Axios](https://axios-http.com/)
