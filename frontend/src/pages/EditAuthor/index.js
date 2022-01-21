@@ -15,12 +15,10 @@ function EditAuthor() {
     const [orcid, setOrcid] = useState("");
     const [idAuthor, setIdAuthor] = useState(0);
     const [redirect, setRedirect] = useState(false);
-    const [idAuthor, setIdAuthor] = useState(0);
-    const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
        
-        setIdResource(new URLSearchParams(window.location.search).get("id"));
+        setIdAuthor(new URLSearchParams(window.location.search).get("id"));
 
         axios.get(`https://educa-mais.herokuapp.com/author/${new URLSearchParams(window.location.search).get("id")}`)
             .then((response) => {
@@ -36,7 +34,7 @@ function EditAuthor() {
     const putAuthor = (e) => {
         e.preventDefault();
 
-        axios.put(`https://educa-mais.herokuapp.com/resource`, {
+        axios.put(`https://educa-mais.herokuapp.com/author`, {
             "id": idAuthor,
             "email": email,
             "name": name,
@@ -50,7 +48,7 @@ function EditAuthor() {
     }
 
     if (redirect) {
-        return <Navigate to={`/autor/detalhes?id=${idResource}`} />
+        return <Navigate to={`/autor/detalhes?id=${idAuthor}`} />
     }
 
     return (

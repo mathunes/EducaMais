@@ -1,0 +1,59 @@
+.container-edit-author {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.container-edit-author .edit-author {
+    margin-left: 290px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.container-edit-author h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.container-edit-author .edit-author-content .edit-author-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+}
+
+.container-edit-author .edit-author-content .edit-author-form * {
+    margin: 10px 0
+}
+
+.container-edit-author .edit-author-content .edit-author-form input,
+.container-edit-author .edit-author-content .edit-author-form select {
+    padding: 12px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+.container-edit-author .edit-author-content .edit-author-form .btn-submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-edit-author .edit-author-content .edit-author-form .btn-submit input:hover {
+    cursor: pointer;
+    background-color: #244791;
+}
+
+.container-edit-author .edit-author-content .edit-author-form input[type="file"] {
+    border: none;
+}
+
+.container-edit-author .edit-author-content .edit-author-form input[type="submit"] {
+    background-color: #6391F4;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 120px;
+}
