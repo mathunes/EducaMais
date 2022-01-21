@@ -54,6 +54,50 @@
     align-items: flex-end;
 }
 
+.btn-show-modal {
+    color: #FFFFFF;
+}
+
+.btn-show-modal:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(3, 3, 3, .6);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container .modal {
+    width: 320px;
+    height: 180px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.modal-container .modal .modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-container .modal .modal-header h2 {
+    font-size: 20px;
+}
+
+.modal-container .modal .modal-body p {
+    text-align: left;
+}
+
 #menu {
     position: absolute;
     left: -100px;
