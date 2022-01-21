@@ -24,7 +24,7 @@ import EventDetails from '../../pages/EventDetails';
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Routes>
             <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
