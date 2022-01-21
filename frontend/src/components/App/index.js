@@ -12,6 +12,7 @@ import EditResource from '../../pages/EditResource';
 import NewResource from '../../pages/NewResource';
 import NewAuthor from '../../pages/NewAuthor';
 import EditAuthor from '../../pages/EditAuthor';
+import CourseDetails from '../../pages/CourseDetails';
 import AuthorDetails from '../../pages/AuthorDetails';
 import NewCourse from '../../pages/NewCourse';
 import EditCourse from '../../pages/EditCourse';
@@ -34,6 +35,7 @@ function App() {
             <Route exact path={process.env.PUBLIC_URL + "/recurso/adicionar"} element={<NewResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
             <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />
+            <Route exact path={process.env.PUBLIC_URL + "/curso/detalhes"} element={<CourseDetails />} />
             <Route exact path={process.env.PUBLIC_URL + "/curso/editar"} element={<EditCourse />} />
             <Route exact path={process.env.PUBLIC_URL + "/curso/adicionar"} element={<NewCourse />} />
             <Route path="*" element={<NotFound />} />
