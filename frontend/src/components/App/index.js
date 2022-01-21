@@ -27,23 +27,23 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Routes>
-            <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
-            <Route exact path={process.env.PUBLIC_URL + "/autores"} element={<Authors />} />
-            <Route exact path={process.env.PUBLIC_URL + "/autor/editar"} element={<EditAuthor />} />
-            <Route exact path={process.env.PUBLIC_URL + "/autor/detalhes"} element={<AuthorDetails />} />
-            <Route exact path={process.env.PUBLIC_URL + "/autor/adicionar"} element={<NewAuthor />} />
-            <Route exact path={process.env.PUBLIC_URL + "/recursos"} element={<Resources />} />
-            <Route exact path={process.env.PUBLIC_URL + "/recurso/detalhes"} element={<ResourceDetails />} />
-            <Route exact path={process.env.PUBLIC_URL + "/recurso/editar"} element={<EditResource />} />
-            <Route exact path={process.env.PUBLIC_URL + "/recurso/adicionar"} element={<NewResource />} />
-            <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
-            <Route exact path={process.env.PUBLIC_URL + "/evento/detalhes"} element={<EventDetails />} />
-            <Route exact path={process.env.PUBLIC_URL + "/evento/editar"} element={<EditEvent />} />
-            <Route exact path={process.env.PUBLIC_URL + "/evento/adicionar"} element={<NewEvent />} />
-            <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />
-            <Route exact path={process.env.PUBLIC_URL + "/curso/detalhes"} element={<CourseDetails />} />
-            <Route exact path={process.env.PUBLIC_URL + "/curso/editar"} element={<EditCourse />} />
-            <Route exact path={process.env.PUBLIC_URL + "/curso/adicionar"} element={<NewCourse />} />
+            <Route exact path={"/"} element={<Home />} />
+            <Route exact path={"/autores"} element={<Authors />} />
+            <Route exact path={"/autor/editar"} element={<EditAuthor />} />
+            <Route exact path={"/autor/detalhes"} element={<AuthorDetails />} />
+            <Route exact path={"/autor/adicionar"} element={<NewAuthor />} />
+            <Route exact path={"/recursos"} element={<Resources />} />
+            <Route exact path={"/recurso/detalhes"} element={<ResourceDetails />} />
+            <Route exact path={"/recurso/editar"} element={<EditResource />} />
+            <Route exact path={"/recurso/adicionar"} element={<NewResource />} />
+            <Route exact path={"/eventos"} element={<Events />} />
+            <Route exact path={"/evento/detalhes"} element={<EventDetails />} />
+            <Route exact path={"/evento/editar"} element={<EditEvent />} />
+            <Route exact path={"/evento/adicionar"} element={<NewEvent />} />
+            <Route exact path={"/cursos"} element={<Courses />} />
+            <Route exact path={"/curso/detalhes"} element={<CourseDetails />} />
+            <Route exact path={"/curso/editar"} element={<EditCourse />} />
+            <Route exact path={"/curso/adicionar"} element={<NewCourse />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
