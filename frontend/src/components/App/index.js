@@ -20,6 +20,7 @@ import EditCourse from '../../pages/EditCourse';
 import './styles.css';
 import NewEvent from '../../pages/NewEvent';
 import EditEvent from '../../pages/EditEvent';
+import EventDetails from '../../pages/EventDetails';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route exact path={process.env.PUBLIC_URL + "/recurso/editar"} element={<EditResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/recurso/adicionar"} element={<NewResource />} />
             <Route exact path={process.env.PUBLIC_URL + "/eventos"} element={<Events />} />
+            <Route exact path={process.env.PUBLIC_URL + "/evento/detalhes"} element={<EventDetails />} />
             <Route exact path={process.env.PUBLIC_URL + "/evento/editar"} element={<EditEvent />} />
             <Route exact path={process.env.PUBLIC_URL + "/evento/adicionar"} element={<NewEvent />} />
             <Route exact path={process.env.PUBLIC_URL + "/cursos"} element={<Courses />} />
