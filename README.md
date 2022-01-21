@@ -3,13 +3,17 @@
 ## Project description
 <b>Educa Mais</b> is an application developed as a partial requirement for completing the course Corporate Application Development - 2021.2, taught by professor <a href="https://github.com/jviterbo" target="_blank"> José Viterbo Filho </a> na Universidade Federal Fluminense.
 
+### Front-end
+
+[Educa Mais](https://mathunes.github.io/EducaMais/)
+
+### Back-end (REST API)
+
+[Educa Mais](https://educa-mais.herokuapp.com)
+
 ### REST API Documentation
 
 [Documentation](https://github.com/mathunes/EducaMais/blob/main/docs/restapi.md)
-
-### REST API
-
-[Educa Mais](https://educa-mais.herokuapp.com)
 
 ### Class model
 
