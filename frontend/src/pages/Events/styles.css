@@ -46,3 +46,10 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+@media (max-width: 750px) {
+    .container-event .events {
+        margin-left: 20px;
+        /* margin-top: 40px; */
+    }
+}

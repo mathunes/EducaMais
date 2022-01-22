@@ -56,3 +56,10 @@
     font-size: 14px;
     width: 120px;
 }
+
+@media (max-width: 750px) {
+    .container-edit-event .edit-event {
+        margin-left: 20px;
+        /* margin-top: 40px; */
+    }
+}

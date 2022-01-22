@@ -46,3 +46,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+
+@media (max-width: 750px) {
+    .container-authors .authors {
+        margin-left: 0;
+        /* margin-top: 40px; */
+    }
+}

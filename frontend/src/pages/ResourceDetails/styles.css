@@ -101,3 +101,10 @@
     font-size: 12px;
     margin: 20px 0;
 }
+
+@media (max-width: 750px) {
+    .container-resource-details .resource-details {
+        margin-left: 20px;
+        /* margin-top: 40px; */
+    }
+}

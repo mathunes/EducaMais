@@ -100,3 +100,10 @@
     font-size: 12px;
     margin: 20px 0;
 }
+
+@media (max-width: 750px) {
+    .container-course-details .course-details {
+        margin-left: 20px;
+        /* margin-top: 40px; */
+    }
+}
