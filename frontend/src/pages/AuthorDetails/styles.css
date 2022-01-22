@@ -8,6 +8,7 @@
     margin-left: 290px;
     width: 100%;
     padding-right: 20px;
+    transition: all .5s;
 }
 
 .container-author-details .author-details h1 {
@@ -85,7 +86,7 @@
 
 @media (max-width: 750px) {
     .container-author-details .author-details {
-        margin-left: 20px;
-        /* margin-top: 40px; */
+        margin: 40px;
+        padding-right: 0;
     }
 }

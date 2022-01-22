@@ -39,6 +39,7 @@
 
 .container-course .courses {
     margin-left: 270px;
+    transition: all .5s;
 }
 
 .container-course .courses .courses-list {
@@ -49,7 +50,10 @@
 
 @media (max-width: 750px) {
     .container-course .courses {
-        margin-left: 20px;
-        /* margin-top: 40px; */
+        margin: 40px 20px;
+    }
+
+    .loading {
+        margin-left: 0 !important;
     }
 }

@@ -8,6 +8,7 @@
     margin-left: 290px;
     width: 100%;
     padding-right: 20px;
+    transition: all .5s;
 }
 
 .container-edit-event h1 {
@@ -59,7 +60,7 @@
 
 @media (max-width: 750px) {
     .container-edit-event .edit-event {
-        margin-left: 20px;
-        /* margin-top: 40px; */
+        margin: 40px;
+        padding-right: 0;
     }
 }

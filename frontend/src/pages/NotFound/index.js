@@ -6,10 +6,12 @@ import "./styles.css";
 
 function NotFound() {
     return (
-        <div className="not-found">
+        <>
             <Sidebar />
-            <b>Página não encontrada :(</b>
-        </div>
+            <div className="not-found">
+                <b>Página não encontrada :(</b>
+            </div>
+        </>
     )
 }
 

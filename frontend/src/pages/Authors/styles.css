@@ -39,6 +39,7 @@
 
 .container-authors .authors {
     margin-left: 270px;
+    transition: all .5s;
 }
 
 .container-authors .authors .authors-list {
@@ -50,7 +51,10 @@
 
 @media (max-width: 750px) {
     .container-authors .authors {
-        margin-left: 0;
-        /* margin-top: 40px; */
+        margin: 40px 20px;
+    }
+
+    .loading {
+        margin-left: 0 !important;
     }
 }

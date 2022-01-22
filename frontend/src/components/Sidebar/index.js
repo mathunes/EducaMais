@@ -13,12 +13,44 @@ function Sidebar(props) {
     const handleModalClose = () => setDisplayModal("none");
     const handleModalShow = () => setDisplayModal("flex");
 
+    const [leftSidebar, setLeftSidebar] = useState("0");
+    const [positionShadow, setPositionShadow] = useState("none");
+    const [displayShadow, setDisplayShadow] = useState("none");
+
+    const handleShowSidebar = () => {
+        setLeftSidebar("0");
+        setPositionShadow("fixed");
+        setDisplayShadow("");
+    }
+
+    const handleHideSidebar = () => {
+        setLeftSidebar("-1000px");
+        setPositionShadow("none");
+        setDisplayShadow("none");
+    }
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 750) {
+            setLeftSidebar("-1000px")
+        } else {
+            setLeftSidebar("0");
+        }
+    });
+
+    useEffect(() => {
+        if (window.innerWidth <= 750) {
+            setLeftSidebar("-1000px")
+        } else {
+            setLeftSidebar("0");
+        }
+    }, []);
    
     return (
         <>
-            {/* <img src={Menu} alt='menu' id="menu" onClick={handleShowSidebar} />
-            <div className='shadow-sidebar'></div> */}
-            <nav className='container'>
+            <img src={Menu} alt='menu' id="menu" onClick={handleShowSidebar} />
+            <div className='shadow-sidebar' style={{position: positionShadow, display: displayShadow}} onClick={handleHideSidebar}/>
+
+            <nav className='container' style={{left: leftSidebar}}>
                 <div>
                     <Link to="/">
                         <img src={Logo} alt='logo' />

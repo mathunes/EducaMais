@@ -59,7 +59,7 @@
 
 @media (max-width: 750px) {
     .container-new-event .new-event {
-        margin-left: 20px;
-        /* margin-top: 40px; */
+        margin: 40px;
+        padding-right: 0;
     }
 }

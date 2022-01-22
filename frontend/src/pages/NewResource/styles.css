@@ -60,7 +60,7 @@
 
 @media (max-width: 750px) {
     .container-new-resource .new-resource {
-        margin-left: 20px;
-        /* margin-top: 40px; */
+        margin: 40px;
+        padding-right: 0;
     }
 }
