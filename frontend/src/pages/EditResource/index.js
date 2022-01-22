@@ -208,7 +208,7 @@ function EditResource() {
                         <select id="authors" name="authors" multiple onChange={handleSelectAuthors}>
                             {
                                 authorsList.map((data) => {
-                                    let selected = resourceAuthors.indexOf(data.id) ? false : true
+                                    let selected = resourceAuthors.indexOf(data.id) !== -1 ? true : false;
 
                                     return (
                                         <option 
