@@ -75,7 +75,7 @@
 
 .modal-container .modal {
     width: 320px;
-    height: 180px;
+    height: 200px;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -95,6 +95,15 @@
 }
 
 .modal-container .modal .modal-body p {
+    text-align: left;
+}
+
+.modal-container .modal .modal-footer {
+    display: flex;
+    align-items: flex-start;
+}
+
+.modal-container .modal .modal-footer a {
     text-align: left;
 }
 
