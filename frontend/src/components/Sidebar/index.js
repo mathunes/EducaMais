@@ -91,6 +91,9 @@ function Sidebar(props) {
                     <div className='modal-body'>
                         <p>Educa Mais é uma aplicação desenvolvida como requisito parcial para a conclusão da disciplina Desenvolvimento de Aplicações Corporativas - 2021.2, ministrada pelo professor José Viterbo Filho na Universidade Federal Fluminense.</p>
                     </div>
+                    <div className='modal-footer'>
+                        <a href="https://github.com/mathunes/EducaMais" target="_blank">Código fonte</a>
+                    </div>
                 </div>
             </div>
 
