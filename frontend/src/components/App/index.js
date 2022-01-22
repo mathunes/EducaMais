@@ -16,11 +16,11 @@ import CourseDetails from '../../pages/CourseDetails';
 import AuthorDetails from '../../pages/AuthorDetails';
 import NewCourse from '../../pages/NewCourse';
 import EditCourse from '../../pages/EditCourse';
-
-import './styles.css';
 import NewEvent from '../../pages/NewEvent';
 import EditEvent from '../../pages/EditEvent';
 import EventDetails from '../../pages/EventDetails';
+
+import './styles.css';
 
 function App() {
   return (
