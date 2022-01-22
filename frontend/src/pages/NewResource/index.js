@@ -158,28 +158,28 @@ function NewResource() {
                 <div className="new-resource-content">
 
                     <form className="new-resource-form" onSubmit={postResource}>
-                        <label for="title">Título</label>
+                        <label htmlFor="title">Título</label>
                         <input id="title" name="title" onChange={(e) => setTitle(e.target.value)} required/>
                         
-                        <label for="description">Descrição</label>
+                        <label htmlFor="description">Descrição</label>
                         <input id="description" name="description" onChange={(e) => setDescription(e.target.value)} required/>
 
-                        <label for="link">Link</label>
+                        <label htmlFor="link">Link</label>
                         <input id="link" name="link" onChange={(e) => setLink(e.target.value)} required/>
 
-                        <label for="image">Imagem representativa (PNG)</label>
+                        <label htmlFor="image">Imagem representativa (PNG)</label>
                         <input id="image" type="file" name="image" accept="image/png" onChange={handleEncodeImageFileAsURL} />
 
-                        <label for="createdAt">Data de criação</label>
+                        <label htmlFor="createdAt">Data de criação</label>
                         <input type="date" id="createdAt" name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} required/>
 
-                        <label for="registeredAt">Data de publicação</label>
+                        <label htmlFor="registeredAt">Data de publicação</label>
                         <input type="date" id="registeredAt" name="registeredAt" onChange={(e) => setRegisteredAt(e.target.value)} required/>
 
-                        <label for="keywords">Palavras chave (separadas por vírgula)</label>
+                        <label htmlFor="keywords">Palavras chave (separadas por vírgula)</label>
                         <input id="keywords" name="keywords" onChange={handleKeyWordsStringToArray} required/>
 
-                        <label for="authors">Autor(es)</label>
+                        <label htmlFor="authors">Autor(es)</label>
                         <select id="authors" name="authors" multiple onChange={handleSelectAuthors}>
                             {
                                 authorsList.map((data) => {
@@ -190,7 +190,7 @@ function NewResource() {
                             }
                         </select>
 
-                        <label for="collection">Coleção</label>
+                        <label htmlFor="collection">Coleção</label>
                         <select id="collection" name="collection" onChange={(e) => setCollection(e.target.value)} >
                             <option value="">-</option>
                             {

@@ -55,19 +55,19 @@ function NewEvent() {
                 <div className="new-event-content">
 
                     <form className="new-event-form" onSubmit={postEvent}>
-                        <label for="title">Título</label>
+                        <label htmlFor="title">Título</label>
                         <input id="title" name="title" onChange={(e) => setTitle(e.target.value)} required/>
                         
-                        <label for="description">Descrição</label>
+                        <label htmlFor="description">Descrição</label>
                         <input id="description" name="description" onChange={(e) => setDescription(e.target.value)} required/>
 
-                        <label for="image">Imagem representativa (PNG)</label>
+                        <label htmlFor="image">Imagem representativa (PNG)</label>
                         <input id="image" type="file" name="image" accept="image/png" onChange={handleEncodeImageFileAsURL} />
 
-                        <label for="startDate">Data início</label>
+                        <label htmlFor="startDate">Data início</label>
                         <input type="date" id="startDate" name="startDate" onChange={(e) => setStartDate(e.target.value)} required/>
 
-                        <label for="endDate">Data fim</label>
+                        <label htmlFor="endDate">Data fim</label>
                         <input type="date" id="endDate" name="endDate" onChange={(e) => setEndDate(e.target.value)} required/>
 
                         <div className="btn-submit">

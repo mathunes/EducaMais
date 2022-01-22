@@ -46,19 +46,19 @@ function NewAuthor() {
                 <div className="new-author-content">
 
                     <form className="new-author-form" onSubmit={postAuthor}>
-                        <label for="name">Nome</label>
+                        <label htmlFor="name">Nome</label>
                         <input id="name" name="name" onChange={(e) => setName(e.target.value)} required/>
                         
-                        <label for="lastname">Sobrenome</label>
+                        <label htmlFor="lastname">Sobrenome</label>
                         <input id="lastname" name="lastname" onChange={(e) => setLastname(e.target.value)} required/>
 
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input id="email" name="email" onChange={(e) => setEmail(e.target.value)} required/>
 
-                        <label for="affiliation">Afiliação</label>
+                        <label htmlFor="affiliation">Afiliação</label>
                         <input id="affiliation" name="affiliation" onChange={(e) => setAffiliation(e.target.value)} required/>
 
-                        <label for="orcid">Orcid</label>
+                        <label htmlFor="orcid">Orcid</label>
                         <input id="orcid" name="orcid" onChange={(e) => setOrcid(e.target.value)} required/>
 
                         <div className="btn-submit">

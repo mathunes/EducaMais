@@ -178,33 +178,33 @@ function EditResource() {
         <div className="container-edit-resource">
             <Sidebar />
             <div className="edit-resource">
-                <h1>Adicionar recurso</h1>
+                <h1>Editar recurso</h1>
 
                 <div className="edit-resource-content">
 
                     <form className="edit-resource-form" onSubmit={putResource}>
-                        <label for="title">Título</label>
+                        <label htmlFor="title">Título</label>
                         <input id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
                         
-                        <label for="description">Descrição</label>
+                        <label htmlFor="description">Descrição</label>
                         <input id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
 
-                        <label for="link">Link</label>
+                        <label htmlFor="link">Link</label>
                         <input id="link" name="link" value={link} onChange={(e) => setLink(e.target.value)} required/>
 
-                        <label for="image">Imagem representativa (PNG)</label>
+                        <label htmlFor="image">Imagem representativa (PNG)</label>
                         <input id="image" type="file" name="image" accept="image/png" onChange={handleEncodeImageFileAsURL} />
 
-                        <label for="createdAt">Data de criação</label>
+                        <label htmlFor="createdAt">Data de criação</label>
                         <input type="date" id="createdAt" value={createdAt} name="createdAt" onChange={(e) => setCreatedAt(e.target.value)} required/>
 
-                        <label for="registeredAt">Data de publicação</label>
+                        <label htmlFor="registeredAt">Data de publicação</label>
                         <input type="date" id="registeredAt" value={registeredAt} name="registeredAt" onChange={(e) => setRegisteredAt(e.target.value)} required/>
 
-                        <label for="keywords">Palavras chave (separadas por vírgula)</label>
+                        <label htmlFor="keywords">Palavras chave (separadas por vírgula)</label>
                         <input id="keywords" name="keywords" value={keywords} onChange={handleKeyWordsStringToArray} required/>
 
-                        <label for="authors">Autor(es)</label>
+                        <label htmlFor="authors">Autor(es)</label>
                         <select id="authors" name="authors" multiple onChange={handleSelectAuthors}>
                             {
                                 authorsList.map((data) => {
@@ -223,7 +223,7 @@ function EditResource() {
                             }
                         </select>
 
-                        <label for="collection">Coleção</label>
+                        <label htmlFor="collection">Coleção</label>
                         <select id="collection" name="collection" onChange={(e) => setCollection(e.target.value)} >
                             <option value="">-</option>
                             {

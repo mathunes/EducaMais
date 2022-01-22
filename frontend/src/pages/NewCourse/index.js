@@ -53,16 +53,16 @@ function NewCourse() {
                 <div className="new-course-content">
 
                     <form className="new-course-form" onSubmit={postCourse}>
-                        <label for="title">Título</label>
+                        <label htmlFor="title">Título</label>
                         <input id="title" name="title" onChange={(e) => setTitle(e.target.value)} required/>
                         
-                        <label for="description">Descrição</label>
+                        <label htmlFor="description">Descrição</label>
                         <input id="description" name="description" onChange={(e) => setDescription(e.target.value)} required/>
 
-                        <label for="image">Imagem representativa (PNG)</label>
+                        <label htmlFor="image">Imagem representativa (PNG)</label>
                         <input id="image" type="file" name="image" accept="image/png" onChange={handleEncodeImageFileAsURL} />
 
-                        <label for="registerDate">Data de registro</label>
+                        <label htmlFor="registerDate">Data de registro</label>
                         <input type="date" id="registerDate" name="registerDate" onChange={(e) => setRegisterDate(e.target.value)} required/>
 
                         <div className="btn-submit">

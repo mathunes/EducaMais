@@ -72,19 +72,19 @@ function EditEvent() {
                 <div className="edit-event-content">
 
                     <form className="edit-event-form" onSubmit={putEvent}>
-                        <label for="title">Título</label>
+                        <label htmlFor="title">Título</label>
                         <input id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
                         
-                        <label for="description">Descrição</label>
+                        <label htmlFor="description">Descrição</label>
                         <input id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
 
-                        <label for="image">Imagem representativa (PNG)</label>
+                        <label htmlFor="image">Imagem representativa (PNG)</label>
                         <input id="image" type="file" name="image" accept="image/png" onChange={handleEncodeImageFileAsURL} />
 
-                        <label for="startDate">Data início</label>
+                        <label htmlFor="startDate">Data início</label>
                         <input type="date" id="startDate" value={startDate} name="startDate" onChange={(e) => setStartDate(e.target.value)} required/>
 
-                        <label for="endDate">Data fim</label>
+                        <label htmlFor="endDate">Data fim</label>
                         <input type="date" id="endDate" value={endDate} name="endDate" onChange={(e) => setEndDate(e.target.value)} required/>
 
                         <div className="btn-submit">
