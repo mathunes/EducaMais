@@ -9,7 +9,7 @@ function Home() {
     return(
         <div className="container-home">
             <Sidebar />
-            <div class="home-last-items">
+            <div className="home-last-items">
                 <LastItems entity="resource" />
                 <LastItems entity="event" />
                 <LastItems entity="course" />

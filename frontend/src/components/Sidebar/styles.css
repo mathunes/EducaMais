@@ -114,6 +114,10 @@
     transition: all .5s;
 }
 
+#menu:hover {
+    cursor: pointer;
+}
+
 .shadow-sidebar {
     width: 100%;
     height: 100%;   
