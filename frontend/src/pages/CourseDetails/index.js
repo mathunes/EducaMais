@@ -52,11 +52,14 @@ function CourseDetails(props) {
                     <h2 className="resources">Recursos</h2>
 
                     <table>
-                        <tr>
-                            <th>Título</th>
-                            <th>Descrição</th>
-                            <th>Recurso</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Descrição</th>
+                                <th>Recurso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {
                             courseResources.map((resource) => {
                                 return (
@@ -68,6 +71,7 @@ function CourseDetails(props) {
                                 )
                             })
                         }
+                        </tbody>
                     </table>
 
                     <p className="dates">Registrado em {course.registerDate}</p>

@@ -58,11 +58,14 @@ function AuthorDetails(props) {
                     <h2 className="resources">Recurso</h2>
 
                     <table>
-                        <tr>
-                            <th>Título</th>
-                            <th>Descrição</th>
-                            <th>Recurso</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Descrição</th>
+                                <th>Recurso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {
                             authorResources.map((resource) => {
                                 return (
@@ -74,6 +77,7 @@ function AuthorDetails(props) {
                                 )
                             })
                         }
+                        </tbody>
                     </table>
 
                 </div>

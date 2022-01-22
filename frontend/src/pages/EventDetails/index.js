@@ -52,11 +52,14 @@ function EventDetails(props) {
                     <h2 className="resources">Recursos</h2>
 
                     <table>
-                        <tr>
-                            <th>Título</th>
-                            <th>Descrição</th>
-                            <th>Recurso</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Descrição</th>
+                                <th>Recurso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {
                             eventResources.map((resource) => {
                                 return (
@@ -68,6 +71,7 @@ function EventDetails(props) {
                                 )
                             })
                         }
+                        </tbody>
                     </table>
 
                     <p className="dates">Data início {event.startDate} - data fim {event.endDate}</p>

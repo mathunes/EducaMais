@@ -65,13 +65,16 @@ function ResourceDetails(props) {
                     <h2 className="authors">Autores</h2>
 
                     <table>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Email</th>
-                            <th>Afiliação</th>
-                            <th>Orcid</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>Email</th>
+                                <th>Afiliação</th>
+                                <th>Orcid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {
                             resourceAuthors.map((author) => {
                                 return (
@@ -85,6 +88,7 @@ function ResourceDetails(props) {
                                 )
                             })
                         }
+                        </tbody>
                     </table>
 {/*                     
                     <h2 className="collection">Coleção</h2>
