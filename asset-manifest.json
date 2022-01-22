@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/EducaMais/static/css/main.7d058cae.css",
-    "main.js": "/EducaMais/static/js/main.5ee90fa4.js",
+    "main.css": "/EducaMais/static/css/main.335302d2.css",
+    "main.js": "/EducaMais/static/js/main.e3f1a005.js",
     "static/media/image-default.png": "/EducaMais/static/media/image-default.d0c10c4044bf56580ac3.png",
     "index.html": "/EducaMais/index.html",
-    "main.7d058cae.css.map": "/EducaMais/static/css/main.7d058cae.css.map",
-    "main.5ee90fa4.js.map": "/EducaMais/static/js/main.5ee90fa4.js.map"
+    "main.335302d2.css.map": "/EducaMais/static/css/main.335302d2.css.map",
+    "main.e3f1a005.js.map": "/EducaMais/static/js/main.e3f1a005.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d058cae.css",
-    "static/js/main.5ee90fa4.js"
+    "static/css/main.335302d2.css",
+    "static/js/main.e3f1a005.js"
   ]
 }
