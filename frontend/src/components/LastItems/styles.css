@@ -1,3 +1,9 @@
+.loading-last-items {
+    margin: 20px 0 20px 20px;
+    font-weight: bolder;
+    text-align: left;
+}
+
 .container-cards {
     padding: 20px;
     text-align: left;

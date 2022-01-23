@@ -8,6 +8,7 @@ function LastItems(props) {
 
     const [entity, setEntity] = useState("");
     const [lastItems, setLastItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         switch (props.entity) {
@@ -27,6 +28,8 @@ function LastItems(props) {
                             setLastItems(response.data);
 
                         }
+
+                        setLoading(false);
                     });
 
                 break;
@@ -45,6 +48,8 @@ function LastItems(props) {
                             setLastItems(response.data);
 
                         }
+
+                        setLoading(false);
                     });
 
                 setEntity("eventos");
@@ -64,6 +69,8 @@ function LastItems(props) {
                             setLastItems(response.data);
 
                         }
+
+                        setLoading(false);
                     });
 
                 setEntity("cursos");
@@ -73,27 +80,44 @@ function LastItems(props) {
         }
     }, []);
 
+    let content;
+
+    if (loading) {
+
+        content = 
+            <div className="loading-last-items">
+                <p>Carregando...</p>
+            </div>
+
+    } else {
+
+        content = 
+            <>
+                <div className="cards">
+                    {
+                        lastItems.map((data) => {
+                            return (
+                                <Card 
+                                    key={data.id}
+                                    title={data.title}
+                                    image={data.image}
+                                    showOptions={false}
+                                    editLink={`/${entity.slice(0, -1)}/editar?id=${data.id}`}
+                                    deleteLink={`/${entity.slice(0, -1)}/excluir?id=${data.id}`}
+                                    showLink={`/${entity.slice(0, -1)}/detalhes?id=${data.id}`}
+                                />
+                            )
+                        })
+                    }
+                </div>
+            </>
+
+    }
 
     return (
         <div className="container-cards">
             <h2>Últimos {entity}</h2>
-            <div className="cards">
-                {
-                    lastItems.map((data) => {
-                        return (
-                            <Card 
-                                key={data.id}
-                                title={data.title}
-                                image={data.image}
-                                showOptions={false}
-                                editLink={`/${entity.slice(0, -1)}/editar?id=${data.id}`}
-                                deleteLink={`/${entity.slice(0, -1)}/excluir?id=${data.id}`}
-                                showLink={`/${entity.slice(0, -1)}/detalhes?id=${data.id}`}
-                            />
-                        )
-                    })
-                }
-            </div>
+            {content}
         </div>
     )
 }
