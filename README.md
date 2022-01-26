@@ -1,7 +1,7 @@
 # Educa Mais
 
 ## Project description
-<b>Educa Mais</b> is an application developed as a partial requirement for completing the course Corporate Application Development - 2021.2, taught by professor <a href="https://github.com/jviterbo" target="_blank"> José Viterbo Filho </a> na Universidade Federal Fluminense.
+<b>Educa Mais</b> is an application developed as a partial requirement for completing the course Corporate Application Development - 2021.2, taught by professor <a href="https://github.com/jviterbo" target="_blank"> José Viterbo Filho </a> at Universidade Federal Fluminense.
 
 ### Front-end
 
