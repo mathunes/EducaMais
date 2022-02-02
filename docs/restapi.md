@@ -502,8 +502,8 @@ Update an event.
 
 Put example to update events attributes:
 
-	{
-		"id": 3,
+    {
+	"id": 3,
         "title": "New event title",
         "description": "New event description",
         "image": "S0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
